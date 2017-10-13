@@ -34,6 +34,16 @@ Date pipes for Angular (2+) based on [Luxon][luxon].
 
 ## Pipes
 
+### `dateTimeFromHttp`
+
+Transforms a HTTP-style date into a DateTime that can be used with the non-parsing
+pipes:
+
+```
+{{ 'Monday, 02-Jan-06 22:04:05 GMT' | dateTimeFromHttp }}
+{{ 'Mon, 02 Jan 2006 22:04:05 GMT' | dateTimeFromHttp }}
+```
+
 ### `dateTimeFromIso`
 
 Transforms an ISO 8601 date into a DateTime that can be used with the non-parsing
