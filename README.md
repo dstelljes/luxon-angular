@@ -55,4 +55,13 @@ pipes:
 {{ '2006-01-02T15:04:05-07:00' | dateTimeFromIso }}
 ```
 
+### `dateTimeFromRfc2822`
+
+Transforms a date formatted according to RFC 2822 into a DateTime that can be
+used with the non-parsing pipes:
+
+```
+{{ 'Mon, 02 Jan 2006 15:04:05 -0700' | dateTimeFromRfc2822 }}
+```
+
 [luxon]: http://isaaccambron.com/luxon/
