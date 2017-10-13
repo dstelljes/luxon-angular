@@ -64,4 +64,14 @@ used with the non-parsing pipes:
 {{ 'Mon, 02 Jan 2006 15:04:05 -0700' | dateTimeFromRfc2822 }}
 ```
 
+### `dateTimeFromString`
+
+Transforms an arbitrarily formatted date into a DateTime that can be used with
+the non-parsing pipes:
+
+```
+{{ '02 Jan 2006' | dateTimeFromString:'dd LLL yyyy' }}
+{{ 'January 2, 2006 3:04 PM' | dateTimeFromString:'LLLL d, yyyy h:mm a' }}
+```
+
 [luxon]: http://isaaccambron.com/luxon/

@@ -6,6 +6,9 @@ All notable changes to this project are documented here. The format is based on
 ## Unreleased
 
 -   Aligned to Luxon 0.0.4.
+-   Added HTTP -> DateTime pipe.
 -   Added ISO 8601 -> DateTime pipe.
+-   Added RFC 2822 -> DateTime pipe.
+-   Added arbitrary format -> DateTime pipe.
 
 [keep-a-changelog]: http://keepachangelog.com/en/1.0.0/
