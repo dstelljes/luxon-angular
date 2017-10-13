@@ -1,0 +1,64 @@
+{
+  "name": "luxon-angular",
+  "version": "0.0.0",
+  "description": "date pipes for Angular",
+  "keywords": [
+    "luxon",
+    "angular",
+    "date",
+    "time",
+    "datetime",
+    "immutable"
+  ],
+  "homepage": "https://github.com/dstelljes/luxon-angular#readme",
+  "bugs": "https://github.com/dstelljes/luxon-angular/issues",
+  "repository": "github:dstelljes/luxon-angular",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Dan Stelljes",
+      "email": "dan@stellj.es",
+      "url": "https://stellj.es"
+    }
+  ],
+  "files": [
+    "library"
+  ],
+  "main": "./library/index.js",
+  "typings": "./library/index.d.ts",
+  "devDependencies": {
+    "@angular/compiler": "4.4.5",
+    "@angular/compiler-cli": "4.4.5",
+    "@angular/core": "4.4.5",
+    "@types/jest": "21.1.2",
+    "@types/node": "8.0.34",
+    "jest": "21.2.1",
+    "reflect-metadata": "0.1.10",
+    "rxjs": "5.4.3",
+    "typescript": "2.5.3",
+    "zone.js": "0.8.18"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=2.0.0",
+    "luxon": "0.0.4"
+  },
+  "scripts": {
+    "build": "ngc",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "roots": [
+      "source"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/testing/setup.js",
+    "testRegex": "\\.test\\.ts$",
+    "transform": {
+      "^.+\\.ts$": "<rootDir>/testing/transform.js"
+    }
+  }
+}

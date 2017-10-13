@@ -1,0 +1,20 @@
+{
+  "angularCompilerOptions": {
+    "genDir": "compiled"
+  },
+  "compilerOptions": {
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "inlineSources": true,
+    "lib": ["dom", "es2015"],
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "outDir": "library",
+    "sourceMap": true,
+    "target": "es5"
+  },
+  "include": [
+    "source/**/*.ts"
+  ]
+}
