@@ -21,9 +21,6 @@
       "url": "https://stellj.es"
     }
   ],
-  "files": [
-    "library"
-  ],
   "main": "./library/index.js",
   "typings": "./library/index.d.ts",
   "devDependencies": {

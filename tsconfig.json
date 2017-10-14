@@ -14,9 +14,6 @@
     "sourceMap": true,
     "target": "es5"
   },
-  "exclude": [
-    "**/*.test.ts"
-  ],
   "include": [
     "source/**/*.ts",
     "typings/**/*.ts"
