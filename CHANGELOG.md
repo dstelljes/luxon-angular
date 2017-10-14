@@ -12,5 +12,6 @@ All notable changes to this project are documented here. The format is based on
 -   Added arbitrary format -> DateTime pipe.
 -   Added DateTime -> ISO 8601 pipes (full/date/time/week).
 -   Added DateTime -> artibrary format pipe.
+-   Added UTC <-> local pipes.
 
 [keep-a-changelog]: http://keepachangelog.com/en/1.0.0/

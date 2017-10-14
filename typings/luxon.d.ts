@@ -9,12 +9,19 @@ declare module "luxon" {
     
     readonly invalidReason: string | null;
     readonly isValid: boolean;
+    readonly zoneName: string;
 
     toFormat(format: string, options?: Object): string;
     toISO(options?: Object): string;
     toISODate(): string;
     toISOTime(options?: Object): string;
     toISOWeekDate(): string;
+    toLocal(): DateTime;
+    toUTC(offset?: number, options?: Object): DateTime;
+
+  }
+
+  export interface Zone {
 
   }
 

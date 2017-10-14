@@ -9,6 +9,8 @@ import { DateTimeToIsoDatePipe } from "./pipes/date-time-to-iso-date";
 import { DateTimeToIsoTimePipe } from "./pipes/date-time-to-iso-time";
 import { DateTimeToIsoWeekDatePipe } from "./pipes/date-time-to-iso-week-date";
 import { DateTimeToIsoPipe } from "./pipes/date-time-to-iso";
+import { DateTimeToLocalPipe } from "./pipes/date-time-to-local";
+import { DateTimeToUtcPipe } from "./pipes/date-time-to-utc";
 
 const PIPES = [
   DateTimeFromFormatPipe,
@@ -19,7 +21,9 @@ const PIPES = [
   DateTimeToIsoDatePipe,
   DateTimeToIsoTimePipe,
   DateTimeToIsoWeekDatePipe,
-  DateTimeToIsoPipe
+  DateTimeToIsoPipe,
+  DateTimeToLocalPipe,
+  DateTimeToUtcPipe
 ];
 
 @NgModule({
