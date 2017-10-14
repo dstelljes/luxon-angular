@@ -32,7 +32,7 @@ Date pipes for Angular (2+) based on [Luxon][luxon].
     };
     ```
 
-## Pipes
+## Parsing pipes
 
 ### `dateTimeFromHttp`
 
@@ -73,5 +73,17 @@ the non-parsing pipes:
 {{ '02 Jan 2006' | dateTimeFromString:'dd LLL yyyy' }}
 {{ 'January 2, 2006 3:04 PM' | dateTimeFromString:'LLLL d, yyyy h:mm a' }}
 ```
+
+## Formatting pipes
+
+### `dateTimeToIso`
+
+Transforms a DateTime into an ISO 8601 date:
+
+```
+{{ date | dateTimeToIso }}
+```
+
+Also available: `dateTimeToIsoDate`, `dateTimeToIsoTime`, and `dateTimeToIsoWeekDate`.
 
 [luxon]: http://isaaccambron.com/luxon/
