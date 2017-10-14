@@ -3,7 +3,7 @@
 All notable changes to this project are documented here. The format is based on
 [Keep a Changelog][keep-a-changelog].
 
-## Unreleased
+## 0.0.1 (2017-10-13)
 
 -   Aligned to Luxon 0.0.4.
 -   Added HTTP -> DateTime pipe.
