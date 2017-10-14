@@ -13,7 +13,7 @@ describe("DateTimeToLocalPipe", () => {
   describe("#transform", () => {
     
     it("transforms a UTC DateTime to local", () => {
-      const result = pipe.transform(new DateTime.fromISO("2006-01-02T15:04:05-07:00").toUTC());
+      const result = pipe.transform(DateTime.fromISO("2006-01-02T15:04:05-07:00").toUTC());
 
       expect(result.zoneName).toBe("local");
     });
