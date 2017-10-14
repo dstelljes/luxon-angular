@@ -1,13 +1,13 @@
 import { DateTime } from "luxon";
 
-import { DateTimeFromStringPipe } from "./date-time-from-string";
+import { DateTimeFromFormatPipe } from "./date-time-from-format";
 
-describe("DateTimeFromStringPipe", () => {
+describe("DateTimeFromFormatPipe", () => {
   
-  let pipe: DateTimeFromStringPipe;
+  let pipe: DateTimeFromFormatPipe;
 
   beforeEach(() => {
-    pipe = new DateTimeFromStringPipe();
+    pipe = new DateTimeFromFormatPipe();
   });
 
   describe("#transform", () => {

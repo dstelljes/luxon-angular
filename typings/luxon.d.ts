@@ -10,6 +10,7 @@ declare module "luxon" {
     readonly invalidReason: string | null;
     readonly isValid: boolean;
 
+    toFormat(format: string, options?: Object): string;
     toISO(options?: Object): string;
     toISODate(): string;
     toISOTime(options?: Object): string;

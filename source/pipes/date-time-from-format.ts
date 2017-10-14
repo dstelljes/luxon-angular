@@ -2,9 +2,9 @@ import { Pipe, PipeTransform } from "@angular/core";
 import { DateTime } from "luxon";
 
 @Pipe({
-  name: "dateTimeFromString"
+  name: "dateTimeFromFormat"
 })
-export class DateTimeFromStringPipe implements PipeTransform {
+export class DateTimeFromFormatPipe implements PipeTransform {
 
   transform(value: string, format: string): DateTime {
     return DateTime.fromString(value, format);
