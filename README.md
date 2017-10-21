@@ -23,7 +23,7 @@ This module is based on a similar project for Moment, [angular2-moment]. Because
     or
 
     ```
-    yarn add luxon-angular
+    yarn add luxon luxon-angular
     ```
 
 -   Import `LuxonModule`:
@@ -39,6 +39,25 @@ This module is based on a similar project for Moment, [angular2-moment]. Because
     })
     export class AppModule {
 
+    };
+    ```
+
+-   Start using the pipes:
+
+    ```typescript
+    import { Component } from "@angular/core";
+
+    @Component({
+      template: `
+        This component was created at {{ date | dateTimeFromJsDate | dateTimeToFormat:'tt' }}!
+      `
+    })
+    export class AppComponent {
+      date: Date;
+
+      constructor() {
+        this.date = new Date();
+      }
     };
     ```
 
