@@ -72,6 +72,21 @@ Transforms an ISO 8601 date into a DateTime that can be used with the non-parsin
 {{ '2006-01-02T15:04:05-07:00' | dateTimeFromIso }}
 ```
 
+### `dateTimeFromJsDate`
+
+Transforms a JavaScript Date object into a DateTime that can be used with the non-parsing pipes:
+
+```
+{{ date | dateTimeFromJsDate }}
+```
+
+Any value that the [Date constructor][js-date] can understand works as well:
+
+```
+{{ 1136239445000 | dateTimeFromJsDate }}
+{{ 'Mon, 02 Jan 2006 15:04:05 -0700' | dateTimeFromJsDate }}
+```
+
 ### `dateTimeFromRfc2822`
 
 Transforms a date formatted according to RFC 2822 into a DateTime that can be used with the non-parsing pipes:
@@ -100,8 +115,24 @@ Transforms a DateTime into an ISO 8601 date:
 
 Also available: `dateTimeToIsoDate`, `dateTimeToIsoTime`, and `dateTimeToIsoWeekDate`.
 
+### `dateTimeToJsDate`
+
+Transforms a DateTime into a JavaScript date:
+
+```
+{{ date | dateTimeToJsDate }}
+```
+
+Works with Angular’s [`DatePipe`][angular-datepipe]:
+
+```
+{{ date | dateTimeToJsDate | date:'fullDate' }}
+```
+
+[angular-datepipe]: https://angular.io/api/common/DatePipe
 [angular2-moment]: https://github.com/urish/angular2-moment
 [intl]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl
+[js-date]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 [luxon]: http://isaaccambron.com/luxon/
 [moment]: https://momentjs.com/
 [relative-time]: https://momentjs.com/docs/#/displaying/fromnow/
