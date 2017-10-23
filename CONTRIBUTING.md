@@ -27,7 +27,7 @@ $ npm run test:watch
 Build:
 
 ```
-Q npm run build
+$ npm run build
 ```
 
 ## Pull requests
@@ -39,3 +39,5 @@ Q npm run build
 3.   Add/modify tests as necessary. Tests should pass and the build should succeed.
 
 4.   Make sure that any large or notable changes are documented in the changelog (and the readme if appropriate).
+
+5.   Open all pull requests against the development branch.
