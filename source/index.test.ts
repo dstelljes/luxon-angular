@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, NgModule } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { LuxonModule } from "./";
@@ -25,18 +25,27 @@ export class YmdToDmyComponent {
 
 };
 
+@NgModule({
+  declarations: [
+    IsoToIsoComponent,
+    TimestampToShortComponent,
+    YmdToDmyComponent
+  ],
+  imports: [
+    CommonModule,
+    LuxonModule
+  ]
+})
+export class LuxonTestModule {
+
+};
+
 describe("test component", () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        IsoToIsoComponent,
-        TimestampToShortComponent,
-        YmdToDmyComponent
-      ],
       imports: [
-        CommonModule,
-        LuxonModule
+        LuxonTestModule
       ]
     });
   });
