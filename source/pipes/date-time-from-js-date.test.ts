@@ -19,13 +19,6 @@ describe("DateTimeFromJsDatePipe", () => {
       expect(result.isValid).toBe(true);
     });
 
-    it("transforms a timestamp (epoch milliseconds) into a DateTime", () => {
-      const result = pipe.transform(1136239445000);
-
-      expect(result).toBeInstanceOf(DateTime);
-      expect(result.isValid).toBe(true);
-    });
-
   });
 
 });

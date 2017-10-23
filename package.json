@@ -41,7 +41,7 @@
   },
   "peerDependencies": {
     "@angular/core": ">=2.0.0",
-    "luxon": "0.0.4"
+    "luxon": "0.0.6"
   },
   "scripts": {
     "build": "ngc",

@@ -99,13 +99,6 @@ Transforms a JavaScript Date object into a DateTime that can be used with the no
 {{ date | dateTimeFromJsDate }}
 ```
 
-Any value that the [Date constructor][js-date] can understand works as well:
-
-```
-{{ 1136239445000 | dateTimeFromJsDate }}
-{{ 'Mon, 02 Jan 2006 15:04:05 -0700' | dateTimeFromJsDate }}
-```
-
 ### `dateTimeFromRfc2822`
 
 Transforms a date formatted according to RFC 2822 into a DateTime that can be used with the non-parsing pipes:
