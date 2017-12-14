@@ -64,6 +64,7 @@ This module is based on a similar project for Moment, [angular2-moment]. Because
 ## Available pipes
 
 -   [Parsing](#parsing)
+-   [Math](#math)
 -   [Time zones and offsets](#time-zones-and-offsets)
 -   [Formatting](#formatting)
 
@@ -127,6 +128,24 @@ Transforms a SQL-style date into a DateTime that can be used with the non-parsin
 
 ```
 {{ '2006-01-02 15:04:05.000-0700' | dateTimeFromSql }}
+```
+
+### Math
+
+#### `dateTimeEarliest`
+
+Selects the earliest (minimum) from a list of DateTimes.
+
+```
+{{ [early, earliest, earlier] | dateTimeEarliest }}
+```
+
+#### `dateTimeLatest`
+
+Selects the latest (maximum) from a list of DateTimes.
+
+```
+{{ [late, latest, later] | dateTimeLatest }}
 ```
 
 ### Time zones and offsets

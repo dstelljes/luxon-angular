@@ -1,6 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { Component, NgModule } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { DateTime } from "luxon";
 
 import { LuxonModule } from "./";
 
@@ -9,6 +10,15 @@ import { LuxonModule } from "./";
 })
 export class IsoToIsoComponent {
 
+};
+
+@Component({
+  template: `{{ [first, second, third] | dateTimeEarliest | dateTimeToFormat:'yyyy' }}`
+})
+export class MinimumComponent {
+  first = DateTime.fromISO("2007-01-02T15:04:05-07:00");
+  second = DateTime.fromISO("2005-01-02T15:04:05-07:00");
+  third = DateTime.fromISO("2006-01-02T15:04:05-07:00");
 };
 
 @Component({
@@ -28,6 +38,7 @@ export class YmdToDmyComponent {
 @NgModule({
   declarations: [
     IsoToIsoComponent,
+    MinimumComponent,
     TimestampToShortComponent,
     YmdToDmyComponent
   ],
@@ -56,6 +67,14 @@ describe("test module", () => {
     fixture.detectChanges();
 
     expect(element.textContent).toBe("2006-01-02T22:04:05.000Z");
+  });
+
+  it("demonstrates minimum", () => {
+    const fixture = TestBed.createComponent(MinimumComponent);
+    const element = fixture.debugElement.nativeElement;
+    fixture.detectChanges();
+
+    expect(element.textContent).toBe("2005");
   });
 
   it("demonstrates string -> DateTime -> string", () => {

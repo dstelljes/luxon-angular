@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 
+import { DateTimeEarliestPipe } from "./pipes/math/date-time-earliest";
 import { DateTimeFromFormatPipe } from "./pipes/parsing/date-time-from-format";
 import { DateTimeFromHttpPipe } from "./pipes/parsing/date-time-from-http";
 import { DateTimeFromIsoPipe } from "./pipes/parsing/date-time-from-iso";
@@ -7,6 +8,7 @@ import { DateTimeFromJsDatePipe } from "./pipes/parsing/date-time-from-js-date";
 import { DateTimeFromMillisecondsPipe } from "./pipes/parsing/date-time-from-milliseconds";
 import { DateTimeFromRfc2822Pipe } from "./pipes/parsing/date-time-from-rfc-2822";
 import { DateTimeFromSqlPipe } from "./pipes/parsing/date-time-from-sql";
+import { DateTimeLatestPipe } from "./pipes/math/date-time-latest";
 import { DateTimeToFormatPipe } from "./pipes/formatting/date-time-to-format";
 import { DateTimeToIsoDatePipe } from "./pipes/formatting/date-time-to-iso-date";
 import { DateTimeToIsoTimePipe } from "./pipes/formatting/date-time-to-iso-time";
@@ -18,6 +20,7 @@ import { DateTimeToSqlPipe } from "./pipes/formatting/date-time-to-sql";
 import { DateTimeToUtcPipe } from "./pipes/zones/date-time-to-utc";
 
 const PIPES = [
+  DateTimeEarliestPipe,
   DateTimeFromFormatPipe,
   DateTimeFromHttpPipe,
   DateTimeFromIsoPipe,
@@ -25,6 +28,7 @@ const PIPES = [
   DateTimeFromMillisecondsPipe,
   DateTimeFromRfc2822Pipe,
   DateTimeFromSqlPipe,
+  DateTimeLatestPipe,
   DateTimeToFormatPipe,
   DateTimeToIsoDatePipe,
   DateTimeToIsoTimePipe,

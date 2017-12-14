@@ -8,6 +8,7 @@ All notable changes to this project are documented here. The format is based on
 -   Aligned to Luxon 0.2.8.
 -   Added milliseconds -> DateTime pipe.
 -   Added SQL <-> DateTime pipes.
+-   Added earliest/latest pipes.
 
 ## 0.1.0 (2017-10-23)
 
