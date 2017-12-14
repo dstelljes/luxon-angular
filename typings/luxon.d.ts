@@ -7,6 +7,7 @@ declare module "luxon" {
     static fromJSDate(date: Date | any, options?: Object): DateTime;
     static fromMillis(milliseconds: number, options?: Object): DateTime;
     static fromRFC2822(text: string, options?: Object): DateTime;
+    static fromSQL(text: string, options?: Object): DateTime;
     static fromString(text: string, format: string, options?: Object): DateTime;
 
     readonly invalidReason: string | null;
@@ -20,6 +21,7 @@ declare module "luxon" {
     toISOWeekDate(): string;
     toJSDate(): Date;
     toLocal(): DateTime;
+    toSQL(): string;
     toUTC(offset?: number, options?: Object): DateTime;
 
   }

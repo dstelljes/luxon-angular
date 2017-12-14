@@ -115,6 +115,14 @@ Transforms a date formatted according to RFC 2822 into a DateTime that can be us
 {{ 'Mon, 02 Jan 2006 15:04:05 -0700' | dateTimeFromRfc2822 }}
 ```
 
+### `dateTimeFromSql`
+
+Transforms a SQL-style date into a DateTime that can be used with the non-parsing pipes:
+
+```
+{{ '2006-01-02 15:04:05.000-0700' | dateTimeFromSql }}
+```
+
 ## Formatting pipes
 
 ### `dateTimeToFormat`
@@ -147,6 +155,14 @@ Works with Angular’s [`DatePipe`][angular-datepipe]:
 
 ```
 {{ date | dateTimeToJsDate | date:'fullDate' }}
+```
+
+### `dateTimeToSql`
+
+Transforms a DateTime into an SQL date string:
+
+```
+{{ date | dateTimeToSql }}
 ```
 
 [angular-datepipe]: https://angular.io/api/common/DatePipe
