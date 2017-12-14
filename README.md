@@ -99,6 +99,14 @@ Transforms a JavaScript Date object into a DateTime that can be used with the no
 {{ date | dateTimeFromJsDate }}
 ```
 
+### `dateTimeFromMilliseconds`
+
+Transforms a timestamp in milliseconds from epoch into a DateTime that can be used with the non-parsing pipes:
+
+```
+{{ date | dateTimeFromMilliseconds }}
+```
+
 ### `dateTimeFromRfc2822`
 
 Transforms a date formatted according to RFC 2822 into a DateTime that can be used with the non-parsing pipes:

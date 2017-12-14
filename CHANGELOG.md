@@ -6,6 +6,7 @@ All notable changes to this project are documented here. The format is based on
 ## Unreleased
 
 -   Aligned to Luxon 0.2.8.
+-   Added milliseconds -> DateTime pipe.
 
 ## 0.1.0 (2017-10-23)
 

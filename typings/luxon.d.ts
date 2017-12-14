@@ -3,8 +3,9 @@ declare module "luxon" {
   export class DateTime {
 
     static fromHTTP(text: string, options?: Object): DateTime;
-    static fromJSDate(date: Date | any, options?: Object): DateTime;
     static fromISO(text: string, options?: Object): DateTime;
+    static fromJSDate(date: Date | any, options?: Object): DateTime;
+    static fromMillis(milliseconds: number, options?: Object): DateTime;
     static fromRFC2822(text: string, options?: Object): DateTime;
     static fromString(text: string, format: string, options?: Object): DateTime;
 

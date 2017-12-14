@@ -4,6 +4,7 @@ import { DateTimeFromFormatPipe } from "./pipes/date-time-from-format";
 import { DateTimeFromHttpPipe } from "./pipes/date-time-from-http";
 import { DateTimeFromIsoPipe } from "./pipes/date-time-from-iso";
 import { DateTimeFromJsDatePipe } from "./pipes/date-time-from-js-date";
+import { DateTimeFromMillisecondsPipe } from "./pipes/date-time-from-milliseconds";
 import { DateTimeFromRfc2822Pipe } from "./pipes/date-time-from-rfc-2822";
 import { DateTimeToFormatPipe } from "./pipes/date-time-to-format";
 import { DateTimeToIsoDatePipe } from "./pipes/date-time-to-iso-date";
@@ -19,6 +20,7 @@ const PIPES = [
   DateTimeFromHttpPipe,
   DateTimeFromIsoPipe,
   DateTimeFromJsDatePipe,
+  DateTimeFromMillisecondsPipe,
   DateTimeFromRfc2822Pipe,
   DateTimeToFormatPipe,
   DateTimeToIsoDatePipe,
