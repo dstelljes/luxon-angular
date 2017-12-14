@@ -6,7 +6,7 @@ import { DateTime } from "luxon";
 })
 export class DateTimeFromMillisecondsPipe implements PipeTransform {
 
-  transform(value: any): DateTime {
+  transform(value: number): DateTime {
     return DateTime.fromMillis(value);
   }
 

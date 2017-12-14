@@ -40,7 +40,7 @@ export class LuxonTestModule {
 
 };
 
-describe("test component", () => {
+describe("test module", () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
