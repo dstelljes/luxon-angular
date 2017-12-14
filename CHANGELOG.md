@@ -3,7 +3,7 @@
 All notable changes to this project are documented here. The format is based on
 [Keep a Changelog][keep-a-changelog].
 
-## Unreleased
+## 0.2.0 (2017-12-13)
 
 -   Aligned to Luxon 0.2.8.
 -   Added milliseconds -> DateTime pipe.
