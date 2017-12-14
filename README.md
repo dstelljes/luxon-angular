@@ -61,9 +61,15 @@ This module is based on a similar project for Moment, [angular2-moment]. Because
     };
     ```
 
-## Parsing pipes
+## Available pipes
 
-### `dateTimeFromFormat`
+-   [Parsing](#parsing)
+-   [Time zones and offsets](#time-zones-and-offsets)
+-   [Formatting](#formatting)
+
+### Parsing
+
+#### `dateTimeFromFormat`
 
 Transforms an arbitrarily formatted date into a DateTime that can be used with the non-parsing pipes:
 
@@ -72,7 +78,7 @@ Transforms an arbitrarily formatted date into a DateTime that can be used with t
 {{ 'January 2, 2006 3:04 PM' | dateTimeFromFormat:'LLLL d, yyyy h:mm a' }}
 ```
 
-### `dateTimeFromHttp`
+#### `dateTimeFromHttp`
 
 Transforms a HTTP-style date into a DateTime that can be used with the non-parsing pipes:
 
@@ -81,7 +87,7 @@ Transforms a HTTP-style date into a DateTime that can be used with the non-parsi
 {{ 'Mon, 02 Jan 2006 22:04:05 GMT' | dateTimeFromHttp }}
 ```
 
-### `dateTimeFromIso`
+#### `dateTimeFromIso`
 
 Transforms an ISO 8601 date into a DateTime that can be used with the non-parsing pipes:
 
@@ -91,7 +97,7 @@ Transforms an ISO 8601 date into a DateTime that can be used with the non-parsin
 {{ '2006-01-02T15:04:05-07:00' | dateTimeFromIso }}
 ```
 
-### `dateTimeFromJsDate`
+#### `dateTimeFromJsDate`
 
 Transforms a JavaScript Date object into a DateTime that can be used with the non-parsing pipes:
 
@@ -99,7 +105,7 @@ Transforms a JavaScript Date object into a DateTime that can be used with the no
 {{ date | dateTimeFromJsDate }}
 ```
 
-### `dateTimeFromMilliseconds`
+#### `dateTimeFromMilliseconds`
 
 Transforms a timestamp in milliseconds from epoch into a DateTime that can be used with the non-parsing pipes:
 
@@ -107,7 +113,7 @@ Transforms a timestamp in milliseconds from epoch into a DateTime that can be us
 {{ date | dateTimeFromMilliseconds }}
 ```
 
-### `dateTimeFromRfc2822`
+#### `dateTimeFromRfc2822`
 
 Transforms a date formatted according to RFC 2822 into a DateTime that can be used with the non-parsing pipes:
 
@@ -115,7 +121,7 @@ Transforms a date formatted according to RFC 2822 into a DateTime that can be us
 {{ 'Mon, 02 Jan 2006 15:04:05 -0700' | dateTimeFromRfc2822 }}
 ```
 
-### `dateTimeFromSql`
+#### `dateTimeFromSql`
 
 Transforms a SQL-style date into a DateTime that can be used with the non-parsing pipes:
 
@@ -123,9 +129,29 @@ Transforms a SQL-style date into a DateTime that can be used with the non-parsin
 {{ '2006-01-02 15:04:05.000-0700' | dateTimeFromSql }}
 ```
 
-## Formatting pipes
+### Time zones and offsets
 
-### `dateTimeToFormat`
+In general, all time zone and offset operations change the DateTime’s zone but keep the underlying timestamp. For more information, see the [Luxon docs][changing-zones].
+
+#### `dateTimeToLocal`
+
+Sets the zone of the DateTime to the local zone:
+
+```
+{{ date | dateTimeToLocal }}
+```
+
+#### `dateTimeToUtc`
+
+Sets the zone of the DateTime to the Coordinated Universal Time zone:
+
+```
+{{ date | dateTimeToUtc }}
+```
+
+### Formatting
+
+#### `dateTimeToFormat`
 
 Transforms a DateTime into an arbitrarily formatted string:
 
@@ -133,7 +159,7 @@ Transforms a DateTime into an arbitrarily formatted string:
 {{ date | dateTimeToFormat:'MMMM d, yyyy' }}
 ```
 
-### `dateTimeToIso`
+#### `dateTimeToIso`
 
 Transforms a DateTime into an ISO 8601 date:
 
@@ -143,7 +169,7 @@ Transforms a DateTime into an ISO 8601 date:
 
 Also available: `dateTimeToIsoDate`, `dateTimeToIsoTime`, and `dateTimeToIsoWeekDate`.
 
-### `dateTimeToJsDate`
+#### `dateTimeToJsDate`
 
 Transforms a DateTime into a JavaScript date:
 
@@ -157,7 +183,7 @@ Works with Angular’s [`DatePipe`][angular-datepipe]:
 {{ date | dateTimeToJsDate | date:'fullDate' }}
 ```
 
-### `dateTimeToSql`
+#### `dateTimeToSql`
 
 Transforms a DateTime into an SQL date string:
 
@@ -167,6 +193,7 @@ Transforms a DateTime into an SQL date string:
 
 [angular-datepipe]: https://angular.io/api/common/DatePipe
 [angular2-moment]: https://github.com/urish/angular2-moment
+[changing-zones]: https://moment.github.io/luxon/docs/manual/zones.html#changing-zones
 [intl]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl
 [js-date]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 [luxon]: http://isaaccambron.com/luxon/
