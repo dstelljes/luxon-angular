@@ -31,6 +31,7 @@
     "@angular/platform-browser": "4.4.6",
     "@angular/platform-browser-dynamic": "4.4.6",
     "@types/jest": "21.1.9",
+    "@types/luxon": "0.2.0",
     "@types/node": "8.5.2",
     "jest": "22.0.4",
     "jest-zone-patch": "0.0.8",
