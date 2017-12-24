@@ -215,7 +215,7 @@ Transforms a DateTime into an SQL date string:
 [changing-zones]: https://moment.github.io/luxon/docs/manual/zones.html#changing-zones
 [intl]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl
 [js-date]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
-[luxon]: http://isaaccambron.com/luxon/
+[luxon]: https://moment.github.io/luxon/
 [moment]: https://momentjs.com/
 [relative-time]: https://momentjs.com/docs/#/displaying/fromnow/
 [relative-time-proposal]: https://github.com/tc39/proposal-intl-relative-time
