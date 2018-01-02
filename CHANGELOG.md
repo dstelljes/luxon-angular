@@ -4,7 +4,7 @@ All notable changes to this project are documented here. The format is based on 
 
 ## Unreleased
 
--   Aligned to Luxon 0.2.9.
+-   Aligned to Luxon 0.2.11.
 
 ## 0.2.0 (2017-12-13)
 
