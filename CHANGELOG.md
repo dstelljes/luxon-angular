@@ -2,9 +2,9 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog][keep-a-changelog].
 
-## Unreleased
+## 0.3.0 (2018-03-28)
 
--   Aligned to Luxon 0.2.11.
+-   Aligned to Luxon ~1.0.0.
 
 ## 0.2.0 (2017-12-13)
 

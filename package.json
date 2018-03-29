@@ -1,6 +1,6 @@
 {
   "name": "luxon-angular",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "date pipes for Angular",
   "keywords": [
     "luxon",
@@ -35,7 +35,7 @@
     "@types/node": "8.5.2",
     "jest": "22.0.4",
     "jest-zone-patch": "0.0.8",
-    "luxon": "^1.0.0",
+    "luxon": "~1.0.0",
     "reflect-metadata": "0.1.10",
     "rxjs": "5.5.6",
     "typescript": "2.5.3",
