@@ -7,7 +7,7 @@ import { DateTime } from "luxon";
 export class DateTimeFromFormatPipe implements PipeTransform {
 
   transform(value: string, format: string): DateTime {
-    return DateTime.fromString(value, format);
+    return DateTime.fromFormat(value, format);
   }
 
 };
