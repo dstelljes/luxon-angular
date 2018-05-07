@@ -2,7 +2,7 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog][keep-a-changelog].
 
-## Unreleased
+## 0.4.0 (2018-05-06)
 
 -   Aligned to Luxon ~1.2.0.
 -   Added ISO 8601 <-> Duration pipes.
