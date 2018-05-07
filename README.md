@@ -138,6 +138,14 @@ Transforms an ISO 8601 duration string into a Duration that can be used with the
 {{ 'P2Y4M6D' | durationFromIso }}
 ```
 
+#### `durationFromMilliseconds`
+
+Transforms a duration in milliseconds into a Duration that can be used with the non-parsing pipes:
+
+```
+{{ 24000 | durationFromMilliseconds }}
+```
+
 ### Math
 
 #### `dateTimeEarliest`

@@ -19,6 +19,7 @@ import { DateTimeToLocalPipe } from "./pipes/zones/date-time-to-local";
 import { DateTimeToSqlPipe } from "./pipes/formatting/date-time-to-sql";
 import { DateTimeToUtcPipe } from "./pipes/zones/date-time-to-utc";
 import { DurationFromIsoPipe } from "./pipes/parsing/duration-from-iso";
+import { DurationFromMillisecondsPipe } from "./pipes/parsing/duration-from-milliseconds";
 import { DurationToIsoPipe } from "./pipes/formatting/duration-to-iso";
 
 const PIPES = [
@@ -41,6 +42,7 @@ const PIPES = [
   DateTimeToSqlPipe,
   DateTimeToUtcPipe,
   DurationFromIsoPipe,
+  DurationFromMillisecondsPipe,
   DurationToIsoPipe
 ];
 

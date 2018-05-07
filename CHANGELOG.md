@@ -6,6 +6,7 @@ All notable changes to this project are documented here. The format is based on 
 
 -   Aligned to Luxon ~1.2.0.
 -   Added ISO 8601 <-> Duration pipes.
+-   Added milliseconds -> Duration pipe.
 
 ## 0.3.0 (2018-03-28)
 
