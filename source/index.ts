@@ -18,6 +18,8 @@ import { DateTimeToJsDatePipe } from "./pipes/formatting/date-time-to-js-date";
 import { DateTimeToLocalPipe } from "./pipes/zones/date-time-to-local";
 import { DateTimeToSqlPipe } from "./pipes/formatting/date-time-to-sql";
 import { DateTimeToUtcPipe } from "./pipes/zones/date-time-to-utc";
+import { DurationFromIsoPipe } from "./pipes/parsing/duration-from-iso";
+import { DurationToIsoPipe } from "./pipes/formatting/duration-to-iso";
 
 const PIPES = [
   DateTimeEarliestPipe,
@@ -37,7 +39,9 @@ const PIPES = [
   DateTimeToJsDatePipe,
   DateTimeToLocalPipe,
   DateTimeToSqlPipe,
-  DateTimeToUtcPipe
+  DateTimeToUtcPipe,
+  DurationFromIsoPipe,
+  DurationToIsoPipe
 ];
 
 @NgModule({

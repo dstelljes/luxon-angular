@@ -130,6 +130,14 @@ Transforms a SQL-style date into a DateTime that can be used with the non-parsin
 {{ '2006-01-02 15:04:05.000-0700' | dateTimeFromSql }}
 ```
 
+#### `durationFromIso`
+
+Transforms an ISO 8601 duration string into a Duration that can be used with the non-parsing pipes:
+
+```
+{{ 'P2Y4M6D' | durationFromIso }}
+```
+
 ### Math
 
 #### `dateTimeEarliest`
@@ -208,6 +216,14 @@ Transforms a DateTime into an SQL date string:
 
 ```
 {{ date | dateTimeToSql }}
+```
+
+#### `durationToIso`
+
+Transforms a Duration into an ISO 8601 duration string:
+
+```
+{{ duration | durationToIso }}
 ```
 
 [angular-datepipe]: https://angular.io/api/common/DatePipe

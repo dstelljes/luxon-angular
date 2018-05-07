@@ -8,7 +8,14 @@ import { LuxonModule } from "./";
 @Component({
   template: `{{ '2006-01-02T15:04:05-07:00' | dateTimeFromIso | dateTimeToUtc | dateTimeToIso }}`
 })
-export class IsoToIsoComponent {
+export class DateTimeIsoToIsoComponent {
+
+};
+
+@Component({
+  template: `{{ 'P2Y4M6D' | durationFromIso | durationToIso }}`
+})
+export class DurationIsoToIsoComponent {
 
 };
 
@@ -37,7 +44,8 @@ export class YmdToDmyComponent {
 
 @NgModule({
   declarations: [
-    IsoToIsoComponent,
+    DateTimeIsoToIsoComponent,
+    DurationIsoToIsoComponent,
     MinimumComponent,
     TimestampToShortComponent,
     YmdToDmyComponent
@@ -62,11 +70,19 @@ describe("test module", () => {
   });
 
   it("demonstrates ISO 8601 -> DateTime -> UTC -> ISO 8601", () => {
-    const fixture = TestBed.createComponent(IsoToIsoComponent);
+    const fixture = TestBed.createComponent(DateTimeIsoToIsoComponent);
     const element = fixture.debugElement.nativeElement;
     fixture.detectChanges();
 
     expect(element.textContent).toBe("2006-01-02T22:04:05.000Z");
+  });
+
+  it("demonstrates ISO 8601 -> Duration -> ISO 8601", () => {
+    const fixture = TestBed.createComponent(DurationIsoToIsoComponent);
+    const element = fixture.debugElement.nativeElement;
+    fixture.detectChanges();
+
+    expect(element.textContent).toBe("P2Y4M6D");
   });
 
   it("demonstrates minimum", () => {
