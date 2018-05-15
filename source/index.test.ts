@@ -6,21 +6,21 @@ import { DateTime } from "luxon";
 import { LuxonModule } from "./";
 
 @Component({
-  template: `{{ '2006-01-02T15:04:05-07:00' | dateTimeFromIso | dateTimeToUtc | dateTimeToIso }}`
+  template: `{{ "2006-01-02T15:04:05-07:00" | dateTimeFromIso | dateTimeToUtc | dateTimeToIso }}`
 })
 export class DateTimeIsoToIsoComponent {
 
 };
 
 @Component({
-  template: `{{ 'P2Y4M6D' | durationFromIso | durationToIso }}`
+  template: `{{ "P2Y4M6D" | durationFromIso | durationToFormat:"y 'years', M 'months', 'and' d 'days'" }}`
 })
-export class DurationIsoToIsoComponent {
+export class DurationIsoToFormatComponent {
 
 };
 
 @Component({
-  template: `{{ [first, second, third] | dateTimeEarliest | dateTimeToFormat:'yyyy' }}`
+  template: `{{ [first, second, third] | dateTimeEarliest | dateTimeToFormat:"yyyy" }}`
 })
 export class MinimumComponent {
   first = DateTime.fromISO("2007-01-02T15:04:05-07:00");
@@ -29,14 +29,14 @@ export class MinimumComponent {
 };
 
 @Component({
-  template: `{{ date | dateTimeFromJsDate | dateTimeToJsDate | date:'mmss' }}`
+  template: `{{ date | dateTimeFromJsDate | dateTimeToJsDate | date:"mmss" }}`
 })
 export class TimestampToShortComponent {
   date = new Date(1136239445000);
 };
 
 @Component({
-  template: `{{ '2006-01-02' | dateTimeFromFormat:'yyyy-MM-dd' | dateTimeToFormat:'dd-MM-yyyy' }}`
+  template: `{{ "2006-01-02" | dateTimeFromFormat:"yyyy-MM-dd" | dateTimeToFormat:"dd-MM-yyyy" }}`
 })
 export class YmdToDmyComponent {
 
@@ -45,7 +45,7 @@ export class YmdToDmyComponent {
 @NgModule({
   declarations: [
     DateTimeIsoToIsoComponent,
-    DurationIsoToIsoComponent,
+    DurationIsoToFormatComponent,
     MinimumComponent,
     TimestampToShortComponent,
     YmdToDmyComponent
@@ -77,12 +77,12 @@ describe("test module", () => {
     expect(element.textContent).toBe("2006-01-02T22:04:05.000Z");
   });
 
-  it("demonstrates ISO 8601 -> Duration -> ISO 8601", () => {
-    const fixture = TestBed.createComponent(DurationIsoToIsoComponent);
+  it("demonstrates ISO 8601 -> Duration -> format", () => {
+    const fixture = TestBed.createComponent(DurationIsoToFormatComponent);
     const element = fixture.debugElement.nativeElement;
     fixture.detectChanges();
 
-    expect(element.textContent).toBe("P2Y4M6D");
+    expect(element.textContent).toBe("2 years, 4 months, and 6 days");
   });
 
   it("demonstrates minimum", () => {

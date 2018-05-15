@@ -234,6 +234,14 @@ Transforms a Duration into an ISO 8601 duration string:
 {{ duration | durationToIso }}
 ```
 
+### `durationToFormat`
+
+Transforms a Duration into an arbitrarily formatted string:
+
+```
+{{ duration | durationToFormat:'mm:ss.SSS' }}
+```
+
 [angular-datepipe]: https://angular.io/api/common/DatePipe
 [angular2-moment]: https://github.com/urish/angular2-moment
 [changing-zones]: https://moment.github.io/luxon/docs/manual/zones.html#changing-zones
