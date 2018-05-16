@@ -12,6 +12,10 @@ describe("DateTimeEarliestPipe", () => {
 
   describe("#transform", () => {
 
+    it("transforms an empty list of DateTimes into undefined", () => {
+      expect(pipe.transform([])).toBeUndefined();
+    });
+
     it("transforms a list of DateTimes into the minimum of that list", () => {
       const result = pipe.transform([
         DateTime.fromISO("2007-01-02T15:04:05-07:00"),

@@ -164,6 +164,22 @@ Selects the latest (maximum) from a list of DateTimes.
 {{ [late, latest, later] | dateTimeLatest }}
 ```
 
+#### `durationLongest`
+
+Selects the longest (maximum) from a list of Durations.
+
+```
+{{ [long, longest, longer] | durationLongest }}
+```
+
+#### `durationShortest`
+
+Selects the shortest (minimum) from a list of Durations.
+
+```
+{{ [short, shortest, shorter] | durationShortest }}
+```
+
 ### Time zones and offsets
 
 In general, all time zone and offset operations change the DateTime’s zone but keep the underlying timestamp. For more information, see the [Luxon docs][changing-zones].

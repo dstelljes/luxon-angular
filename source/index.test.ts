@@ -1,15 +1,24 @@
 import { CommonModule } from "@angular/common";
 import { Component, NgModule } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
-import { DateTime } from "luxon";
+import { DateTime, Duration } from "luxon";
 
-import { LuxonModule } from "./";
+import { LuxonModule } from ".";
 
 @Component({
   template: `{{ "2006-01-02T15:04:05-07:00" | dateTimeFromIso | dateTimeToUtc | dateTimeToIso }}`
 })
 export class DateTimeIsoToIsoComponent {
 
+};
+
+@Component({
+  template: `{{ [[first, second, third] | dateTimeEarliest, third] | dateTimeLatest | dateTimeToFormat:"yyyy" }}`
+})
+export class DateTimeMinimumMaximumComponent {
+  first = DateTime.fromISO("2007-01-02T15:04:05-07:00");
+  second = DateTime.fromISO("2005-01-02T15:04:05-07:00");
+  third = DateTime.fromISO("2006-01-02T15:04:05-07:00");
 };
 
 @Component({
@@ -20,12 +29,12 @@ export class DurationIsoToFormatComponent {
 };
 
 @Component({
-  template: `{{ [first, second, third] | dateTimeEarliest | dateTimeToFormat:"yyyy" }}`
+  template: `{{ ([[first, second, third] | durationLongest, third] | durationShortest).milliseconds }}`
 })
-export class MinimumComponent {
-  first = DateTime.fromISO("2007-01-02T15:04:05-07:00");
-  second = DateTime.fromISO("2005-01-02T15:04:05-07:00");
-  third = DateTime.fromISO("2006-01-02T15:04:05-07:00");
+export class DurationMinimumMaximumComponent {
+  first = Duration.fromMillis(280);
+  second = Duration.fromMillis(-40);
+  third = Duration.fromMillis(20);
 };
 
 @Component({
@@ -45,8 +54,9 @@ export class YmdToDmyComponent {
 @NgModule({
   declarations: [
     DateTimeIsoToIsoComponent,
+    DateTimeMinimumMaximumComponent,
     DurationIsoToFormatComponent,
-    MinimumComponent,
+    DurationMinimumMaximumComponent,
     TimestampToShortComponent,
     YmdToDmyComponent
   ],
@@ -77,6 +87,14 @@ describe("test module", () => {
     expect(element.textContent).toBe("2006-01-02T22:04:05.000Z");
   });
 
+  it("demonstrates maximum/minimum DateTime", () => {
+    const fixture = TestBed.createComponent(DateTimeMinimumMaximumComponent);
+    const element = fixture.debugElement.nativeElement;
+    fixture.detectChanges();
+
+    expect(element.textContent).toBe("2006");
+  });
+
   it("demonstrates ISO 8601 -> Duration -> format", () => {
     const fixture = TestBed.createComponent(DurationIsoToFormatComponent);
     const element = fixture.debugElement.nativeElement;
@@ -85,20 +103,12 @@ describe("test module", () => {
     expect(element.textContent).toBe("2 years, 4 months, and 6 days");
   });
 
-  it("demonstrates minimum", () => {
-    const fixture = TestBed.createComponent(MinimumComponent);
+  it("demonstrates maximum/minimum Duration", () => {
+    const fixture = TestBed.createComponent(DurationMinimumMaximumComponent);
     const element = fixture.debugElement.nativeElement;
     fixture.detectChanges();
 
-    expect(element.textContent).toBe("2005");
-  });
-
-  it("demonstrates string -> DateTime -> string", () => {
-    const fixture = TestBed.createComponent(YmdToDmyComponent);
-    const element = fixture.debugElement.nativeElement;
-    fixture.detectChanges();
-
-    expect(element.textContent).toBe("02-01-2006");
+    expect(element.textContent).toBe("20");
   });
 
   it("demonstrates timestamp -> Date -> DateTime -> Date", () => {
@@ -107,6 +117,14 @@ describe("test module", () => {
     fixture.detectChanges();
 
     expect(element.textContent).toBe("0405");
+  });
+
+  it("demonstrates string -> DateTime -> string", () => {
+    const fixture = TestBed.createComponent(YmdToDmyComponent);
+    const element = fixture.debugElement.nativeElement;
+    fixture.detectChanges();
+
+    expect(element.textContent).toBe("02-01-2006");
   });
 
 });

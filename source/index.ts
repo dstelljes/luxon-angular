@@ -20,6 +20,8 @@ import { DateTimeToSqlPipe } from "./pipes/formatting/date-time-to-sql";
 import { DateTimeToUtcPipe } from "./pipes/zones/date-time-to-utc";
 import { DurationFromIsoPipe } from "./pipes/parsing/duration-from-iso";
 import { DurationFromMillisecondsPipe } from "./pipes/parsing/duration-from-milliseconds";
+import { DurationLongestPipe } from "./pipes/math/duration-longest";
+import { DurationShortestPipe } from "./pipes/math/duration-shortest";
 import { DurationToFormatPipe } from "./pipes/formatting/duration-to-format";
 import { DurationToIsoPipe } from "./pipes/formatting/duration-to-iso";
 
@@ -44,6 +46,8 @@ const PIPES = [
   DateTimeToUtcPipe,
   DurationFromIsoPipe,
   DurationFromMillisecondsPipe,
+  DurationLongestPipe,
+  DurationShortestPipe,
   DurationToFormatPipe,
   DurationToIsoPipe
 ];
