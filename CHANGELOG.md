@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog][keep-a-changelog].
 
+## Unreleased
+
+-   Aligned to Luxon ~1.3.0.
+
 ## 0.4.1 (2018-05-15)
 
 -   Added Duration -> arbitrary format pipe.
