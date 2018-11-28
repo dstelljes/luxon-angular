@@ -24,26 +24,25 @@
   "main": "./library/index.js",
   "typings": "./library/index.d.ts",
   "devDependencies": {
-    "@angular/common": "7.1.0",
-    "@angular/compiler": "7.1.0",
-    "@angular/compiler-cli": "7.1.0",
-    "@angular/core": "7.1.0",
-    "@angular/platform-browser": "7.1.0",
-    "@angular/platform-browser-dynamic": "7.1.0",
-    "@types/jest": "23.3.9",
+    "@angular/common": "7.1.1",
+    "@angular/compiler": "7.1.1",
+    "@angular/compiler-cli": "7.1.1",
+    "@angular/core": "7.1.1",
+    "@angular/platform-browser": "7.1.1",
+    "@angular/platform-browser-dynamic": "7.1.1",
+    "@types/jest": "23.3.10",
     "@types/luxon": "1.4.1",
     "@types/node": "10.12.10",
     "jest": "23.6.0",
     "jest-zone-patch": "0.0.8",
-    "luxon": ">=1.4.0 <2.0.0",
-    "reflect-metadata": "0.1.12",
-    "rxjs": "forward-compat",
+    "luxon": "1.8.1",
+    "rxjs": "6.3.3",
     "typescript": "3.1.6",
     "zone.js": "0.8.26"
   },
   "peerDependencies": {
-    "@angular/core": ">=2.0.0",
-    "luxon": "~1.4.0"
+    "@angular/core": ">=5",
+    "luxon": ">=1 <2"
   },
   "scripts": {
     "build": "ngc",
@@ -60,7 +59,6 @@
     ],
     "setupTestFrameworkScriptFile": "<rootDir>/testing/setup.js",
     "testRegex": "\\.test\\.ts$",
-    "testURL": "http://localhost",
     "transform": {
       "^.+\\.ts$": "<rootDir>/testing/transform.js"
     }
