@@ -1,6 +1,6 @@
 # luxon-angular
 
-This is a collection of date/time pipes for Angular (2+) based on [Luxon][luxon].
+This is a collection of date/time pipes for Angular (5+) based on [Luxon][luxon].
 
 Luxon is a JavaScript library for parsing, formatting, and manipulating dates and times. It’s a descendant of [Moment.js][moment], but it differs in a few key ways:
 
