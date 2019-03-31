@@ -1,13 +1,11 @@
-import { Pipe, PipeTransform } from "@angular/core";
-import { DateTime } from "luxon";
+import { Pipe, PipeTransform } from '@angular/core'
+import { DateTime } from 'luxon'
 
 @Pipe({
-  name: "dateTimeFromHttp"
+  name: 'dateTimeFromHttp'
 })
 export class DateTimeFromHttpPipe implements PipeTransform {
-
-  transform(value: string): DateTime {
-    return DateTime.fromHTTP(value);
+  transform (value: string): DateTime {
+    return DateTime.fromHTTP(value)
   }
-
-};
+}

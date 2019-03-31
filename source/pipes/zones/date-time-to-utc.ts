@@ -1,13 +1,11 @@
-import { Pipe, PipeTransform } from "@angular/core";
-import { DateTime } from "luxon";
+import { Pipe, PipeTransform } from '@angular/core'
+import { DateTime } from 'luxon'
 
 @Pipe({
-  name: "dateTimeToUtc"
+  name: 'dateTimeToUtc'
 })
 export class DateTimeToUtcPipe implements PipeTransform {
-
-  transform(value: DateTime): DateTime {
-    return value.toUTC();
+  transform (value: DateTime): DateTime {
+    return value.toUTC()
   }
-
-};
+}

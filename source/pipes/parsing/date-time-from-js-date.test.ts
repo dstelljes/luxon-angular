@@ -1,24 +1,15 @@
-import { DateTime } from "luxon";
+import { DateTime } from 'luxon'
+import { DateTimeFromJsDatePipe } from './date-time-from-js-date'
 
-import { DateTimeFromJsDatePipe } from "./date-time-from-js-date";
+describe('DateTimeFromJsDatePipe', () => {
+  const pipe = new DateTimeFromJsDatePipe()
 
-describe("DateTimeFromJsDatePipe", () => {
-  
-  let pipe: DateTimeFromJsDatePipe;
+  describe('#transform', () => {
+    it('transforms a JavaScript Date into a DateTime', () => {
+      const result = pipe.transform(new Date(1136239445000))
 
-  beforeEach(() => {
-    pipe = new DateTimeFromJsDatePipe();
-  });
-
-  describe("#transform", () => {
-    
-    it("transforms a JavaScript Date into a DateTime", () => {
-      const result = pipe.transform(new Date(1136239445000));
-
-      expect(result).toBeInstanceOf(DateTime);
-      expect(result.isValid).toBe(true);
-    });
-
-  });
-
-});
+      expect(result).toBeInstanceOf(DateTime)
+      expect(result.isValid).toBe(true)
+    })
+  })
+})

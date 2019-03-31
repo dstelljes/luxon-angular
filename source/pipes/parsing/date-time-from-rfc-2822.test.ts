@@ -1,31 +1,22 @@
-import { DateTime } from "luxon";
+import { DateTime } from 'luxon'
+import { DateTimeFromRfc2822Pipe } from './date-time-from-rfc-2822'
 
-import { DateTimeFromRfc2822Pipe } from "./date-time-from-rfc-2822";
+describe('DateTimeFromRfc2822Pipe', () => {
+  const pipe = new DateTimeFromRfc2822Pipe()
 
-describe("DateTimeFromRfc2822Pipe", () => {
-  
-  let pipe: DateTimeFromRfc2822Pipe;
+  describe('#transform', () => {
+    it('transforms a string formatted according to RFC 2822 into a DateTime', () => {
+      const result = pipe.transform('Mon, 02 Jan 2006 15:04:05 -0700')
 
-  beforeEach(() => {
-    pipe = new DateTimeFromRfc2822Pipe();
-  });
+      expect(result).toBeInstanceOf(DateTime)
+      expect(result.isValid).toBe(true)
+    })
 
-  describe("#transform", () => {
-    
-    it("transforms a string formatted according to RFC 2822 into a DateTime", () => {
-      const result = pipe.transform("Mon, 02 Jan 2006 15:04:05 -0700");
+    it('transforms an incorrectly formatted string into an invalid DateTime', () => {
+      const result = pipe.transform('January 2, 2006')
 
-      expect(result).toBeInstanceOf(DateTime);
-      expect(result.isValid).toBe(true);
-    });
-
-    it("transforms an incorrectly formatted string into an invalid DateTime", () => {
-      const result = pipe.transform("January 2, 2006");
-
-      expect(result).toBeInstanceOf(DateTime);
-      expect(result.isValid).toBe(false);
-    });
-
-  });
-
-});
+      expect(result).toBeInstanceOf(DateTime)
+      expect(result.isValid).toBe(false)
+    })
+  })
+})

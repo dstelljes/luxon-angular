@@ -1,31 +1,22 @@
-import { Duration } from "luxon";
+import { Duration } from 'luxon'
+import { DurationFromIsoPipe } from './duration-from-iso'
 
-import { DurationFromIsoPipe } from "./duration-from-iso";
+describe('DurationFromIsoPipe', () => {
+  const pipe = new DurationFromIsoPipe()
 
-describe("DurationFromIsoPipe", () => {
+  describe('#transform', () => {
+    it('transforms an ISO 8601 string into a Duration', () => {
+      const result = pipe.transform('P2Y4M6D')
 
-  let pipe: DurationFromIsoPipe;
+      expect(result).toBeInstanceOf(Duration)
+      expect(result.isValid).toBe(true)
+    })
 
-  beforeEach(() => {
-    pipe = new DurationFromIsoPipe();
-  });
+    it('transforms an incorrectly formatted string into an invalid DateTime', () => {
+      const result = pipe.transform('two years, four months, six days')
 
-  describe("#transform", () => {
-
-    it("transforms an ISO 8601 string into a Duration", () => {
-      const result = pipe.transform("P2Y4M6D");
-
-      expect(result).toBeInstanceOf(Duration);
-      expect(result.isValid).toBe(true);
-    });
-
-    it("transforms an incorrectly formatted string into an invalid DateTime", () => {
-      const result = pipe.transform("two years, four months, six days");
-
-      expect(result).toBeInstanceOf(Duration);
-      expect(result.isValid).toBe(false);
-    });
-
-  });
-
-});
+      expect(result).toBeInstanceOf(Duration)
+      expect(result.isValid).toBe(false)
+    })
+  })
+})

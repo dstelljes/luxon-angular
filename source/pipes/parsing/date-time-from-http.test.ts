@@ -1,31 +1,22 @@
-import { DateTime } from "luxon";
+import { DateTime } from 'luxon'
+import { DateTimeFromHttpPipe } from './date-time-from-http'
 
-import { DateTimeFromHttpPipe } from "./date-time-from-http";
+describe('DateTimeFromHttpPipe', () => {
+  const pipe = new DateTimeFromHttpPipe()
 
-describe("DateTimeFromHttpPipe", () => {
-  
-  let pipe: DateTimeFromHttpPipe;
+  describe('#transform', () => {
+    it('transforms a string formatted according to the HTTP header specs into a DateTime', () => {
+      const result = pipe.transform('Mon, 02 Jan 2006 22:04:05 GMT')
 
-  beforeEach(() => {
-    pipe = new DateTimeFromHttpPipe();
-  });
+      expect(result).toBeInstanceOf(DateTime)
+      expect(result.isValid).toBe(true)
+    })
 
-  describe("#transform", () => {
-    
-    it("transforms a string formatted according to the HTTP header specs into a DateTime", () => {
-      const result = pipe.transform("Mon, 02 Jan 2006 22:04:05 GMT");
+    it('transforms an incorrectly formatted string into an invalid DateTime', () => {
+      const result = pipe.transform('January 2, 2006')
 
-      expect(result).toBeInstanceOf(DateTime);
-      expect(result.isValid).toBe(true);
-    });
-
-    it("transforms an incorrectly formatted string into an invalid DateTime", () => {
-      const result = pipe.transform("January 2, 2006");
-
-      expect(result).toBeInstanceOf(DateTime);
-      expect(result.isValid).toBe(false);
-    });
-
-  });
-
-});
+      expect(result).toBeInstanceOf(DateTime)
+      expect(result.isValid).toBe(false)
+    })
+  })
+})

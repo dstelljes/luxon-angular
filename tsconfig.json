@@ -12,7 +12,8 @@
     "module": "commonjs",
     "outDir": "library",
     "sourceMap": true,
+    "strictNullChecks": true,
     "target": "es5"
   },
-  "files": ["source/index.ts"]
+  "include": ["source/**/*.ts"]
 }

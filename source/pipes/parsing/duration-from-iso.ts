@@ -1,13 +1,11 @@
-import { Pipe, PipeTransform } from "@angular/core";
-import { Duration } from "luxon";
+import { Pipe, PipeTransform } from '@angular/core'
+import { Duration } from 'luxon'
 
 @Pipe({
-  name: "durationFromIso"
+  name: 'durationFromIso'
 })
 export class DurationFromIsoPipe implements PipeTransform {
-
-  transform(value: string): Duration {
-    return Duration.fromISO(value);
+  transform (value: string): Duration {
+    return Duration.fromISO(value)
   }
-
-};
+}

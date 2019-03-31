@@ -1,13 +1,11 @@
-import { Pipe, PipeTransform } from "@angular/core";
-import { Duration } from "luxon";
+import { Pipe, PipeTransform } from '@angular/core'
+import { Duration } from 'luxon'
 
 @Pipe({
-  name: "durationToFormat"
+  name: 'durationToFormat'
 })
 export class DurationToFormatPipe implements PipeTransform {
-
-  transform(value: Duration, format: string): string {
-    return value.toFormat(format);
+  transform (value: Duration, format: string): string {
+    return value.toFormat(format)
   }
-
-};
+}
