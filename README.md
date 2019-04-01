@@ -2,16 +2,6 @@
 
 This is a collection of date/time pipes for Angular (5+) based on [Luxon][luxon].
 
-Luxon is a JavaScript library for parsing, formatting, and manipulating dates and times. It’s a descendant of [Moment.js][moment], but it differs in a few key ways:
-
--   Strictness: Moment will ingest pretty much anything that resembles a date. Luxon only parses properly formatted values.
-
--   Immutability: Operations on a Moment instance modify the instance itself. Luxon instances (DateTime, Duration, Interval) can’t be mutated; operations return a new object and the original remains unchanged.
-
--   Scope: Moment handles formatting and internationalization internally. Luxon relies on the [Intl API][intl].
-
-This module is based on a similar project for Moment, [angular2-moment]. Because Luxon objects are immutable, they’re a nice fit for Angular’s pure-by-default pipes. However, luxon-angular can’t achieve feature parity with angular2-moment until Luxon supports [relative time formatting][relative-time], which can’t happen until relative time formatting [is supported natively][relative-time-proposal].
-
 ## Getting started
 
 -   Install (making sure Luxon is installed as well):
@@ -25,6 +15,8 @@ This module is based on a similar project for Moment, [angular2-moment]. Because
     ```
     yarn add luxon luxon-angular
     ```
+
+    If you plan to use the relative formatting pipes, also install the [`relative-time-format`][relative-time-polyfill] polyfill—so far, only Chrome supports [`Intl.RelativeTimeFormat`][relative-time-proposal].
 
 -   Import `LuxonModule`:
 
@@ -234,6 +226,17 @@ Works with Angular’s [`DatePipe`][angular-datepipe]:
 {{ date | dateTimeToJsDate | date:'fullDate' }}
 ```
 
+#### `dateTimeToRelative` and `dateTimeToRelativeCalendar`
+
+Transforms a DateTime into a relative time:
+
+```
+{{ date | dateTimeToRelative:'day':'long' }}
+{{ date | dateTimeToRelativeCalendar:'month' }}
+```
+
+The unit and style parameters are optional.
+
 #### `dateTimeToSql`
 
 Transforms a DateTime into an SQL date string:
@@ -259,11 +262,7 @@ Transforms a Duration into an arbitrarily formatted string:
 ```
 
 [angular-datepipe]: https://angular.io/api/common/DatePipe
-[angular2-moment]: https://github.com/urish/angular2-moment
 [changing-zones]: https://moment.github.io/luxon/docs/manual/zones.html#changing-zones
-[intl]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl
-[js-date]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 [luxon]: https://moment.github.io/luxon/
-[moment]: https://momentjs.com/
-[relative-time]: https://momentjs.com/docs/#/displaying/fromnow/
+[relative-time-polyfill]: https://github.com/catamphetamine/relative-time-format
 [relative-time-proposal]: https://github.com/tc39/proposal-intl-relative-time

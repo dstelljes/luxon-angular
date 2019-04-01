@@ -16,6 +16,8 @@ import { DateTimeToIsoWeekDatePipe } from './pipes/formatting/date-time-to-iso-w
 import { DateTimeToIsoPipe } from './pipes/formatting/date-time-to-iso'
 import { DateTimeToJsDatePipe } from './pipes/formatting/date-time-to-js-date'
 import { DateTimeToLocalPipe } from './pipes/zones/date-time-to-local'
+import { DateTimeToRelativePipe } from './pipes/formatting/date-time-to-relative'
+import { DateTimeToRelativeCalendarPipe } from './pipes/formatting/date-time-to-relative-calendar'
 import { DateTimeToSqlPipe } from './pipes/formatting/date-time-to-sql'
 import { DateTimeToUtcPipe } from './pipes/zones/date-time-to-utc'
 import { DurationFromIsoPipe } from './pipes/parsing/duration-from-iso'
@@ -42,6 +44,8 @@ const PIPES = [
   DateTimeToIsoPipe,
   DateTimeToJsDatePipe,
   DateTimeToLocalPipe,
+  DateTimeToRelativePipe,
+  DateTimeToRelativeCalendarPipe,
   DateTimeToSqlPipe,
   DateTimeToUtcPipe,
   DurationFromIsoPipe,
@@ -56,6 +60,4 @@ const PIPES = [
   declarations: PIPES,
   exports: PIPES
 })
-export class LuxonModule {
-
-}
+export class LuxonModule { }
