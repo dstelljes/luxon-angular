@@ -1,2 +1,7 @@
 /*
-!/library/
+
+!/cjs/
+!/esm2015/
+!/esm5/
+
+**/*.test.*

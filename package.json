@@ -21,8 +21,10 @@
       "url": "https://stellj.es"
     }
   ],
-  "main": "./library/index.js",
-  "typings": "./library/index.d.ts",
+  "main": "./cjs/index.js",
+  "module": "./esm5/index.js",
+  "es2015": "./es2015/index.js",
+  "typings": "./cjs/index.d.ts",
   "devDependencies": {
     "@angular/common": "7.2.11",
     "@angular/compiler": "7.2.11",
@@ -36,6 +38,8 @@
     "jest": "24.5.0",
     "jest-zone-patch": "0.0.10",
     "luxon": "1.12.0",
+    "npm-run-all": "4.1.5",
+    "rimraf": "2.6.3",
     "rxjs": "6.4.0",
     "tslint": "5.14.0",
     "tslint-config-standard": "8.0.1",
@@ -47,10 +51,15 @@
     "luxon": ">=1 <2"
   },
   "scripts": {
+    "clean": "rimraf cjs esm5 esm2015",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "pretest": "npm run lint",
     "test": "jest",
-    "build": "ngc"
+    "prebuild": "run-s clean test",
+    "build": "run-p build:*",
+    "build:cjs": "ngc",
+    "build:esm2015": "ngc --module es2015 --target es2015 --outDir esm2015",
+    "build:esm5": "ngc --module es2015 --target es5 --outDir esm5"
   },
   "jest": {
     "moduleFileExtensions": [

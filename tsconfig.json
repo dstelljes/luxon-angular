@@ -8,9 +8,10 @@
     "experimentalDecorators": true,
     "inlineSources": true,
     "lib": ["dom", "es2015"],
-    "noImplicitAny": true,
     "module": "commonjs",
-    "outDir": "library",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "outDir": "cjs",
     "sourceMap": true,
     "strictNullChecks": true,
     "target": "es5"

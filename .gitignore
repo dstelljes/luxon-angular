@@ -1,2 +1,4 @@
-/library
+/cjs
+/esm2015
+/esm5
 /node_modules

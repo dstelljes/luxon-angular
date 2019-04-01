@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog][keep-a-changelog].
 
+## Unreleased
+
+-   Configured build to include ES5 and ES2015 outputs.
+
 ## 1.0.0 (2018-11-28)
 
 -   Dropped support for outdated Angular versions (< 5).
