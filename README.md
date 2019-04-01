@@ -253,7 +253,7 @@ Transforms a Duration into an ISO 8601 duration string:
 {{ duration | durationToIso }}
 ```
 
-### `durationToFormat`
+#### `durationToFormat`
 
 Transforms a Duration into an arbitrarily formatted string:
 

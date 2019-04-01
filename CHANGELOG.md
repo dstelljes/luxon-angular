@@ -2,7 +2,7 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog][keep-a-changelog].
 
-## Unreleased
+## 1.1.0
 
 -   Added DateTime -> relative pipes.
 -   Configured build to include ES5 and ES2015 outputs.
