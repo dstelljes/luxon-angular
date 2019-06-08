@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog][keep-a-changelog].
 
+## Unreleased
+
+-   Dropped support for outdated Angular versions (< 6).
+
 ## 1.1.0
 
 -   Added DateTime -> relative pipes.
