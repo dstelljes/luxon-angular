@@ -5,7 +5,7 @@ import { Duration } from 'luxon'
   name: 'durationToIso'
 })
 export class DurationToIsoPipe implements PipeTransform {
-  transform (value: Duration): string {
-    return value.toISO()
+  transform <T extends Duration | null | undefined> (value: T) {
+    return (value == null ? null : value.toISO()) as T extends Duration ? string : null
   }
 }

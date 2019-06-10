@@ -5,6 +5,11 @@ describe('DateTimeLatestPipe', () => {
   const pipe = new DateTimeLatestPipe()
 
   describe('#transform', () => {
+    it('transforms an empty input into null', () => {
+      expect(pipe.transform(null)).toBeNull()
+      expect(pipe.transform(undefined)).toBeNull()
+    })
+
     it('transforms an empty list of DateTimes into undefined', () => {
       expect(pipe.transform([])).toBeUndefined()
     })

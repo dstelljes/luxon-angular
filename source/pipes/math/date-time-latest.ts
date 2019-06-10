@@ -5,7 +5,7 @@ import { DateTime } from 'luxon'
   name: 'dateTimeLatest'
 })
 export class DateTimeLatestPipe implements PipeTransform {
-  transform (value: DateTime[]): DateTime {
-    return DateTime.max(...value)
+  transform <T extends DateTime[] | null | undefined> (value: T) {
+    return (value == null ? null : DateTime.max(...value as DateTime[])) as T extends DateTime[] ? DateTime : null
   }
 }

@@ -5,7 +5,7 @@ import { DateTime } from 'luxon'
   name: 'dateTimeEarliest'
 })
 export class DateTimeEarliestPipe implements PipeTransform {
-  transform (value: DateTime[]): DateTime {
-    return DateTime.min(...value)
+  transform <T extends DateTime[] | null | undefined> (value: T) {
+    return (value == null ? null : DateTime.min(...value as DateTime[])) as T extends DateTime[] ? DateTime : null
   }
 }

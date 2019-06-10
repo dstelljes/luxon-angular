@@ -5,7 +5,7 @@ import { DateTime } from 'luxon'
   name: 'dateTimeFromRfc2822'
 })
 export class DateTimeFromRfc2822Pipe implements PipeTransform {
-  transform (value: string): DateTime {
-    return DateTime.fromRFC2822(value)
+  transform <T extends string | null | undefined> (value: T) {
+    return (value == null ? null : DateTime.fromRFC2822(value as string)) as T extends string ? DateTime : null
   }
 }

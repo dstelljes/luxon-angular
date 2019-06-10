@@ -5,7 +5,7 @@ import { Duration } from 'luxon'
   name: 'durationFromMilliseconds'
 })
 export class DurationFromMillisecondsPipe implements PipeTransform {
-  transform (value: number): Duration {
-    return Duration.fromMillis(value)
+  transform <T extends number | null | undefined> (value: T) {
+    return (value == null ? null : Duration.fromMillis(value as number)) as T extends number ? Duration : null
   }
 }

@@ -4,6 +4,7 @@ All notable changes to this project are documented here. The format is based on 
 
 ## Unreleased
 
+-   Allowed null/undefined values on all pipes.
 -   Dropped support for outdated Angular versions (< 6).
 
 ## 1.1.0

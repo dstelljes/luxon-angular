@@ -5,6 +5,11 @@ describe('DurationShortestPipe', () => {
   const pipe = new DurationShortestPipe()
 
   describe('#transform', () => {
+    it('transforms an empty input into null', () => {
+      expect(pipe.transform(null)).toBeNull()
+      expect(pipe.transform(undefined)).toBeNull()
+    })
+
     it('transforms an empty list of Durations into undefined', () => {
       expect(pipe.transform([])).toBeUndefined()
     })

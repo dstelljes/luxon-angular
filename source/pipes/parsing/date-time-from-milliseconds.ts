@@ -5,7 +5,7 @@ import { DateTime } from 'luxon'
   name: 'dateTimeFromMilliseconds'
 })
 export class DateTimeFromMillisecondsPipe implements PipeTransform {
-  transform (value: number): DateTime {
-    return DateTime.fromMillis(value)
+  transform <T extends number | null | undefined> (value: T) {
+    return (value == null ? null : DateTime.fromMillis(value as number)) as T extends number ? DateTime : null
   }
 }

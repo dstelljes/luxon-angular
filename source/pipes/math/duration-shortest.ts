@@ -5,7 +5,7 @@ import { Duration } from 'luxon'
   name: 'durationShortest'
 })
 export class DurationShortestPipe implements PipeTransform {
-  transform (value: Duration[]): Duration {
-    return [...value].sort((a, b) => a.milliseconds - b.milliseconds)[0]
+  transform <T extends Duration[] | null | undefined> (value: T) {
+    return (value == null ? null : [...value as Duration[]].sort((a, b) => a.milliseconds - b.milliseconds)[0]) as T extends Duration[] ? Duration : null
   }
 }

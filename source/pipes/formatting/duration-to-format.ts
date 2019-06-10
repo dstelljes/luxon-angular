@@ -5,7 +5,7 @@ import { Duration } from 'luxon'
   name: 'durationToFormat'
 })
 export class DurationToFormatPipe implements PipeTransform {
-  transform (value: Duration, format: string): string {
-    return value.toFormat(format)
+  transform <T extends Duration | null | undefined> (value: T, format: string) {
+    return (value == null ? null : value.toFormat(format)) as T extends Duration ? string : null
   }
 }

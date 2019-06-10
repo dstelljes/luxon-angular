@@ -5,6 +5,11 @@ describe('DateTimeFromRfc2822Pipe', () => {
   const pipe = new DateTimeFromRfc2822Pipe()
 
   describe('#transform', () => {
+    it('transforms an empty input into null', () => {
+      expect(pipe.transform(null)).toBeNull()
+      expect(pipe.transform(undefined)).toBeNull()
+    })
+
     it('transforms a string formatted according to RFC 2822 into a DateTime', () => {
       const result = pipe.transform('Mon, 02 Jan 2006 15:04:05 -0700')
 

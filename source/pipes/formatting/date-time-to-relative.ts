@@ -5,10 +5,10 @@ import { DateTime, ToRelativeUnit } from 'luxon'
   name: 'dateTimeToRelative'
 })
 export class DateTimeToRelativePipe implements PipeTransform {
-  transform (value: DateTime, unit?: ToRelativeUnit, style?: 'long' | 'short' | 'narrow'): string {
-    return value.toRelative({
+  transform <T extends DateTime | null | undefined> (value: T, unit?: ToRelativeUnit, style?: 'long' | 'short' | 'narrow') {
+    return (value == null ? null : value.toRelative({
       style,
       unit
-    }) as string
+    })) as T extends DateTime ? string : null
   }
 }

@@ -5,7 +5,7 @@ import { DateTime } from 'luxon'
   name: 'dateTimeToIso'
 })
 export class DateTimeToIsoPipe implements PipeTransform {
-  transform (value: DateTime): string {
-    return value.toISO()
+  transform <T extends DateTime | null | undefined> (value: T) {
+    return (value == null ? null : value.toISO()) as T extends DateTime ? string : null
   }
 }

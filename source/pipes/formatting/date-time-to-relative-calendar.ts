@@ -5,9 +5,9 @@ import { DateTime, ToRelativeUnit } from 'luxon'
   name: 'dateTimeToRelativeCalendar'
 })
 export class DateTimeToRelativeCalendarPipe implements PipeTransform {
-  transform (value: DateTime, unit?: ToRelativeUnit): string {
-    return value.toRelativeCalendar({
+  transform <T extends DateTime | null | undefined> (value: T, unit?: ToRelativeUnit) {
+    return (value == null ? null : value.toRelativeCalendar({
       unit
-    }) as string
+    })) as T extends DateTime ? string : null
   }
 }

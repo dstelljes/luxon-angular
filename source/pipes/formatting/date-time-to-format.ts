@@ -5,7 +5,7 @@ import { DateTime } from 'luxon'
   name: 'dateTimeToFormat'
 })
 export class DateTimeToFormatPipe implements PipeTransform {
-  transform (value: DateTime, format: string): string {
-    return value.toFormat(format)
+  transform <T extends DateTime | null | undefined> (value: T, format: string) {
+    return (value == null ? null : value.toFormat(format)) as T extends DateTime ? string : null
   }
 }

@@ -5,6 +5,11 @@ describe('DurationFromIsoPipe', () => {
   const pipe = new DurationFromIsoPipe()
 
   describe('#transform', () => {
+    it('transforms an empty input into null', () => {
+      expect(pipe.transform(null)).toBeNull()
+      expect(pipe.transform(undefined)).toBeNull()
+    })
+
     it('transforms an ISO 8601 string into a Duration', () => {
       const result = pipe.transform('P2Y4M6D')
 

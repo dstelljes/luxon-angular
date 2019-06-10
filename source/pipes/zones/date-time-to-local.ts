@@ -5,7 +5,7 @@ import { DateTime } from 'luxon'
   name: 'dateTimeToLocal'
 })
 export class DateTimeToLocalPipe implements PipeTransform {
-  transform (value: DateTime): DateTime {
-    return value.toLocal()
+  transform <T extends DateTime | null | undefined> (value: T) {
+    return (value == null ? null : value.toLocal()) as T extends DateTime ? DateTime : null
   }
 }

@@ -5,7 +5,7 @@ import { DateTime } from 'luxon'
   name: 'dateTimeFromJsDate'
 })
 export class DateTimeFromJsDatePipe implements PipeTransform {
-  transform (value: Date): DateTime {
-    return DateTime.fromJSDate(value)
+  transform <T extends Date | null | undefined> (value: T) {
+    return (value == null ? null : DateTime.fromJSDate(value as Date)) as T extends Date ? DateTime : null
   }
 }

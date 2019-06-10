@@ -34,6 +34,13 @@ export class DurationMinimumMaximumComponent {
 }
 
 @Component({
+  template: `{{ (date | dateTimeToLocal | dateTimeToJsDate) || 'nope' }}`
+})
+export class NullValueComponent {
+  date = null
+}
+
+@Component({
   template: `{{ date | dateTimeFromJsDate | dateTimeToJsDate | date:"mmss" }}`
 })
 export class TimestampToShortComponent {
@@ -51,6 +58,7 @@ export class YmdToDmyComponent { }
     DateTimeMinimumMaximumComponent,
     DurationIsoToFormatComponent,
     DurationMinimumMaximumComponent,
+    NullValueComponent,
     TimestampToShortComponent,
     YmdToDmyComponent
   ],
@@ -100,6 +108,14 @@ describe('test module', () => {
     fixture.detectChanges()
 
     expect(element.textContent).toBe('20')
+  })
+
+  it('demonstrates null value handling', () => {
+    const fixture = TestBed.createComponent(NullValueComponent)
+    const element = fixture.debugElement.nativeElement
+    fixture.detectChanges()
+
+    expect(element.textContent).toBe('nope')
   })
 
   it('demonstrates timestamp -> Date -> DateTime -> Date', () => {

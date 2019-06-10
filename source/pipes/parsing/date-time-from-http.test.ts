@@ -5,6 +5,11 @@ describe('DateTimeFromHttpPipe', () => {
   const pipe = new DateTimeFromHttpPipe()
 
   describe('#transform', () => {
+    it('transforms an empty input into null', () => {
+      expect(pipe.transform(null)).toBeNull()
+      expect(pipe.transform(undefined)).toBeNull()
+    })
+
     it('transforms a string formatted according to the HTTP header specs into a DateTime', () => {
       const result = pipe.transform('Mon, 02 Jan 2006 22:04:05 GMT')
 

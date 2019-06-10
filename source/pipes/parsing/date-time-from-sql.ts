@@ -5,7 +5,7 @@ import { DateTime } from 'luxon'
   name: 'dateTimeFromSql'
 })
 export class DateTimeFromSqlPipe implements PipeTransform {
-  transform (value: string): DateTime {
-    return DateTime.fromSQL(value)
+  transform <T extends string | null | undefined> (value: T) {
+    return (value == null ? null : DateTime.fromSQL(value as string)) as T extends string ? DateTime : null
   }
 }

@@ -5,7 +5,7 @@ import { DateTime } from 'luxon'
   name: 'dateTimeToUtc'
 })
 export class DateTimeToUtcPipe implements PipeTransform {
-  transform (value: DateTime): DateTime {
-    return value.toUTC()
+  transform <T extends DateTime | null | undefined> (value: T) {
+    return (value == null ? null : value.toUTC()) as T extends DateTime ? DateTime : null
   }
 }

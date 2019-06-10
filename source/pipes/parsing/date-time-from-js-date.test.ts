@@ -5,6 +5,11 @@ describe('DateTimeFromJsDatePipe', () => {
   const pipe = new DateTimeFromJsDatePipe()
 
   describe('#transform', () => {
+    it('transforms an empty input into null', () => {
+      expect(pipe.transform(null)).toBeNull()
+      expect(pipe.transform(undefined)).toBeNull()
+    })
+
     it('transforms a JavaScript Date into a DateTime', () => {
       const result = pipe.transform(new Date(1136239445000))
 

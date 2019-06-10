@@ -5,6 +5,11 @@ describe('DurationFromMillisecondsPipe', () => {
   const pipe = new DurationFromMillisecondsPipe()
 
   describe('#transform', () => {
+    it('transforms an empty input into null', () => {
+      expect(pipe.transform(null)).toBeNull()
+      expect(pipe.transform(undefined)).toBeNull()
+    })
+
     it('transforms milliseconds into a Duration', () => {
       const result = pipe.transform(2.16e7)
 

@@ -5,7 +5,7 @@ import { DateTime } from 'luxon'
   name: 'dateTimeToIsoWeekDate'
 })
 export class DateTimeToIsoWeekDatePipe implements PipeTransform {
-  transform (value: DateTime): string {
-    return value.toISOWeekDate()
+  transform <T extends DateTime | null | undefined> (value: T) {
+    return (value == null ? null : value.toISOWeekDate()) as T extends DateTime ? string : null
   }
 }
