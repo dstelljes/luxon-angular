@@ -1,0 +1,19 @@
+name: pull request
+on:
+  pull_request:
+    branches:
+    - development
+    - master
+
+jobs:
+  test:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Pull code
+      uses: actions/checkout@v1
+    - name: Install dependencies
+      run: npm ci
+    - name: Lint
+      run: npm run lint
+    - name: Run unit tests
+      run: npm run test -- --browsers=ChromeHeadless --watch=false

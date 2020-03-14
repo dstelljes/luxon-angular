@@ -1,20 +1,26 @@
 {
   "angularCompilerOptions": {
-    "skipTemplateCodegen": true
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   },
+  "compileOnSave": false,
   "compilerOptions": {
-    "declaration": true,
-    "emitDecoratorMetadata": true,
+    "baseUrl": "./",
+    "declaration": false,
+    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "inlineSources": true,
-    "lib": ["dom", "es2015"],
-    "module": "commonjs",
+    "importHelpers": true,
+    "lib": ["dom", "es2018"],
+    "module": "esnext",
     "moduleResolution": "node",
-    "noImplicitAny": true,
-    "outDir": "cjs",
+    "outDir": "./dist/out-tsc",
+    "paths": {
+      "luxon-angular": [
+        "dist/luxon-angular/luxon-angular",
+        "dist/luxon-angular"
+      ]
+    },
     "sourceMap": true,
-    "strictNullChecks": true,
-    "target": "es5"
-  },
-  "include": ["source/**/*.ts"]
+    "target": "es2015"
+  }
 }

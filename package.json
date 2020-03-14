@@ -1,80 +1,49 @@
 {
   "name": "luxon-angular",
-  "version": "2.0.0",
-  "description": "date pipes for Angular",
-  "keywords": [
-    "luxon",
-    "angular",
-    "date",
-    "time",
-    "datetime",
-    "immutable"
-  ],
-  "homepage": "https://github.com/dstelljes/luxon-angular#readme",
-  "bugs": "https://github.com/dstelljes/luxon-angular/issues",
-  "repository": "github:dstelljes/luxon-angular",
   "license": "MIT",
-  "contributors": [
-    {
-      "name": "Dan Stelljes",
-      "email": "dan@stellj.es",
-      "url": "https://stellj.es"
-    }
-  ],
-  "main": "./cjs/index.js",
-  "module": "./esm5/index.js",
-  "es2015": "./esm2015/index.js",
-  "typings": "./cjs/index.d.ts",
-  "devDependencies": {
-    "@angular/common": "8.0.0",
-    "@angular/compiler": "8.0.0",
-    "@angular/compiler-cli": "8.0.0",
-    "@angular/core": "8.0.0",
-    "@angular/platform-browser": "8.0.0",
-    "@angular/platform-browser-dynamic": "8.0.0",
-    "@types/jest": "24.0.17",
-    "@types/luxon": "1.15.2",
-    "@types/node": "12.7.2",
-    "jest": "24.8.0",
-    "jest-zone-patch": "0.0.10",
-    "luxon": "1.17.2",
-    "npm-run-all": "4.1.5",
-    "rimraf": "3.0.0",
-    "rxjs": "6.5.2",
-    "tslint": "5.18.0",
-    "tslint-config-standard": "8.0.1",
-    "typescript": "3.4.5",
+  "private": true,
+  "scripts": {
+    "ng": "ng",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint"
+  },
+  "dependencies": {
+    "@angular/animations": "9.0.6",
+    "@angular/common": "9.0.6",
+    "@angular/compiler": "9.0.6",
+    "@angular/core": "9.0.6",
+    "@angular/forms": "9.0.6",
+    "@angular/platform-browser": "9.0.6",
+    "@angular/platform-browser-dynamic": "9.0.6",
+    "@angular/router": "9.0.6",
+    "luxon": "1.22.0",
+    "rxjs": "6.5.4",
+    "tslib": "1.10.0",
     "zone.js": "0.10.2"
   },
-  "peerDependencies": {
-    "@angular/core": ">=6",
-    "luxon": ">=1 <2"
-  },
-  "scripts": {
-    "clean": "rimraf cjs esm5 esm2015",
-    "lint": "tslint -c tslint.json -p tsconfig.json",
-    "pretest": "npm run lint",
-    "test": "jest",
-    "prebuild": "run-s clean test",
-    "build": "run-p build:*",
-    "build:cjs": "ngc",
-    "build:esm2015": "ngc --module es2015 --target es2015 --outDir esm2015",
-    "build:esm5": "ngc --module es2015 --target es5 --outDir esm5"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "js"
-    ],
-    "roots": [
-      "source"
-    ],
-    "setupFilesAfterEnv": [
-      "<rootDir>/testing/setup.js"
-    ],
-    "testRegex": "\\.test\\.ts$",
-    "transform": {
-      "^.+\\.ts$": "<rootDir>/testing/transform.js"
-    }
+  "devDependencies": {
+    "@angular-devkit/build-angular": "0.900.6",
+    "@angular-devkit/build-ng-packagr": "0.900.6",
+    "@angular/cli": "9.0.6",
+    "@angular/compiler-cli": "9.0.6",
+    "@angular/language-service": "9.0.6",
+    "@types/luxon": "1.21.0",
+    "@types/node": "12.11.1",
+    "@types/jasmine": "3.5.0",
+    "@types/jasminewd2": "2.0.3",
+    "codelyzer": "5.1.2",
+    "jasmine-core": "3.5.0",
+    "jasmine-spec-reporter": "4.2.1",
+    "karma": "4.3.0",
+    "karma-chrome-launcher": "3.1.0",
+    "karma-coverage-istanbul-reporter": "2.1.0",
+    "karma-jasmine": "2.0.1",
+    "karma-jasmine-html-reporter": "1.4.2",
+    "ng-packagr": "9.0.0",
+    "protractor": "5.4.3",
+    "ts-node": "8.3.0",
+    "tslint": "5.18.0",
+    "typescript": "3.7.5"
   }
 }

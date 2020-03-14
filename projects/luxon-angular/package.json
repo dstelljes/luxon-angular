@@ -1,0 +1,28 @@
+{
+  "name": "luxon-angular",
+  "version": "2.0.0",
+  "description": "date pipes for Angular",
+  "keywords": [
+    "luxon",
+    "angular",
+    "date",
+    "time",
+    "datetime",
+    "immutable"
+  ],
+  "homepage": "https://github.com/dstelljes/luxon-angular#readme",
+  "bugs": "https://github.com/dstelljes/luxon-angular/issues",
+  "repository": "github:dstelljes/luxon-angular",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Dan Stelljes",
+      "email": "dan@stellj.es",
+      "url": "https://stellj.es"
+    }
+  ],
+  "peerDependencies": {
+    "@angular/core": ">=6",
+    "luxon": ">=1 <2"
+  }
+}

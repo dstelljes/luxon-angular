@@ -12,16 +12,16 @@ $ cd luxon-angular
 $ npm install
 ```
 
-Run tests:
+Lint:
 
 ```
-$ npm test
+$ npm run lint
 ```
 
 Run tests in watch mode:
 
 ```
-$ npm run test:watch
+$ npm run test
 ```
 
 Build:
