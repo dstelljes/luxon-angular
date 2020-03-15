@@ -11,11 +11,12 @@ jobs:
     - name: Pull code
       uses: actions/checkout@v1
     - name: Install dependencies
-      run: npm ci
+      run: npm ci --ignore-scripts
     - name: Build
       run: npm run build -- --prod
+    - name: Configure npm
+      run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+      working-directory: ./dist/luxon-angular
     - name: Publish to npm
       run: npm publish
       working-directory: ./dist/luxon-angular
-      env:
-        NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
