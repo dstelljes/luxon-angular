@@ -27,6 +27,35 @@ import { DurationShortestPipe } from './math/duration-shortest.pipe';
 import { DurationToFormatPipe } from './formatting/duration-to-format.pipe';
 import { DurationToIsoPipe } from './formatting/duration-to-iso.pipe';
 
+export {
+  DateTimeEarliestPipe,
+  DateTimeFromFormatPipe,
+  DateTimeFromHttpPipe,
+  DateTimeFromIsoPipe,
+  DateTimeFromJsDatePipe,
+  DateTimeFromMillisecondsPipe,
+  DateTimeFromRfc2822Pipe,
+  DateTimeFromSqlPipe,
+  DateTimeLatestPipe,
+  DateTimeToFormatPipe,
+  DateTimeToIsoDatePipe,
+  DateTimeToIsoTimePipe,
+  DateTimeToIsoWeekDatePipe,
+  DateTimeToIsoPipe,
+  DateTimeToJsDatePipe,
+  DateTimeToLocalPipe,
+  DateTimeToRelativePipe,
+  DateTimeToRelativeCalendarPipe,
+  DateTimeToSqlPipe,
+  DateTimeToUtcPipe,
+  DurationFromIsoPipe,
+  DurationFromMillisecondsPipe,
+  DurationLongestPipe,
+  DurationShortestPipe,
+  DurationToFormatPipe,
+  DurationToIsoPipe
+};
+
 const PIPES = [
   DateTimeEarliestPipe,
   DateTimeFromFormatPipe,
