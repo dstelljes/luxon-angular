@@ -11,7 +11,7 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "lib": ["dom", "es2018"],
-    "module": "esnext",
+    "module": "es2020",
     "moduleResolution": "node",
     "outDir": "./dist/out-tsc",
     "paths": {
