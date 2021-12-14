@@ -1,6 +1,6 @@
 # luxon-angular
 
-This is a collection of date/time pipes for Angular (6+) based on [Luxon][luxon].
+This is a collection of date/time pipes for Angular (12+) based on [Luxon][luxon].
 
 ## Getting started
 
