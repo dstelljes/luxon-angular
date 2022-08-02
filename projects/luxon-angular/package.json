@@ -26,6 +26,6 @@
   },
   "peerDependencies": {
     "@angular/core": ">=12",
-    "luxon": ">=2.0.0 <3"
+    "luxon": ">=2.0.0 <4"
   }
 }
