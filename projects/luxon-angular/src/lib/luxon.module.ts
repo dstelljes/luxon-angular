@@ -25,6 +25,7 @@ import { DurationFromMillisecondsPipe } from './parsing/duration-from-millisecon
 import { DurationLongestPipe } from './math/duration-longest.pipe';
 import { DurationShortestPipe } from './math/duration-shortest.pipe';
 import { DurationToFormatPipe } from './formatting/duration-to-format.pipe';
+import { DurationToHumanPipe } from './formatting/duration-to-human.pipe';
 import { DurationToIsoPipe } from './formatting/duration-to-iso.pipe';
 
 export {
@@ -53,6 +54,7 @@ export {
   DurationLongestPipe,
   DurationShortestPipe,
   DurationToFormatPipe,
+  DurationToHumanPipe,
   DurationToIsoPipe
 };
 
@@ -82,6 +84,7 @@ const PIPES = [
   DurationLongestPipe,
   DurationShortestPipe,
   DurationToFormatPipe,
+  DurationToHumanPipe,
   DurationToIsoPipe
 ];
 

@@ -245,20 +245,28 @@ Transforms a DateTime into an SQL date string:
 {{ date | dateTimeToSql }}
 ```
 
-#### `durationToIso`
-
-Transforms a Duration into an ISO 8601 duration string:
-
-```
-{{ duration | durationToIso }}
-```
-
 #### `durationToFormat`
 
 Transforms a Duration into an arbitrarily formatted string:
 
 ```
 {{ duration | durationToFormat:'mm:ss.SSS' }}
+```
+
+#### `durationToHuman`
+
+Transforms a Duration into a human-readable string with all units included:
+
+```
+{{ duration | durationToHuman }}
+```
+
+#### `durationToIso`
+
+Transforms a Duration into an ISO 8601 duration string:
+
+```
+{{ duration | durationToIso }}
 ```
 
 [angular-datepipe]: https://angular.io/api/common/DatePipe

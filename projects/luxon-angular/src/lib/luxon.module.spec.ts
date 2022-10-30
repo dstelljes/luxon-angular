@@ -25,6 +25,11 @@ export class DateTimeMinimumMaximumComponent {
 export class DurationIsoToFormatComponent { }
 
 @Component({
+  template: `{{ "P2Y4M6D" | durationFromIso | durationToHuman }}`
+})
+export class DurationIsoToHumanComponent { }
+
+@Component({
   template: `{{ ([[first, second, third] | durationLongest, third] | durationShortest).milliseconds }}`
 })
 export class DurationMinimumMaximumComponent {
@@ -57,6 +62,7 @@ export class YmdToDmyComponent { }
     DateTimeIsoToIsoComponent,
     DateTimeMinimumMaximumComponent,
     DurationIsoToFormatComponent,
+    DurationIsoToHumanComponent,
     DurationMinimumMaximumComponent,
     NullValueComponent,
     TimestampToShortComponent,
@@ -100,6 +106,14 @@ describe('test module', () => {
     fixture.detectChanges();
 
     expect(element.textContent).toBe('2 years, 4 months, and 6 days');
+  });
+
+  it('demonstrates ISO 8601 -> Duration -> human', () => {
+    const fixture = TestBed.createComponent(DurationIsoToHumanComponent);
+    const element = fixture.debugElement.nativeElement;
+    fixture.detectChanges();
+
+    expect(element.textContent).toBe('2 years, 4 months, 6 days');
   });
 
   it('demonstrates maximum/minimum Duration', () => {
