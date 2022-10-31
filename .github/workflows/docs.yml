@@ -3,9 +3,22 @@ on:
   push:
     branches:
     - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   update:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-22.04
     steps:
     - name: Pull code
@@ -14,7 +27,12 @@ jobs:
       run: npm ci --ignore-scripts
     - name: Build site
       run: npx compodoc
-    - name: Publish changes
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: npx gh-pages --dist docs --repo https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git --user 'GitHub Actions <luxon-angular@stellj.es>'
+    - name: Set up Pages
+      uses: actions/configure-pages@v2
+    - name: Upload generated docs
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: docs
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v1
