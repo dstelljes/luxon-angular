@@ -1,0 +1,9 @@
+{
+  "exclude": [
+    "projects/luxon-angular/src/**/*.spec.ts",
+    "projects/luxon-angular/src/test.ts"
+  ],
+  "include": [
+    "projects/luxon-angular/src/**/*.ts"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "disableCoverage": true,
+  "disableDependencies": true,
+  "disableDomTree": true,
+  "disableGraph": true,
+  "disableInternal": true,
+  "disableSourceCode": true,
+  "disableStyleTab": true,
+  "disableTemplateTab": true,
+  "hideGenerator": true,
+  "output": "docs",
+  "tsconfig": "./tsconfig.doc.json"
+}

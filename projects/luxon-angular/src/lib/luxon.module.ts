@@ -62,6 +62,7 @@ export {
   DurationToIsoTimePipe
 };
 
+/** @internal */
 const PIPES = [
   DateTimeEarliestPipe,
   DateTimeFromFormatPipe,
