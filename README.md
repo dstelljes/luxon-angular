@@ -130,6 +130,14 @@ Transforms an ISO 8601 duration string into a Duration that can be used with the
 {{ 'P2Y4M6D' | durationFromIso }}
 ```
 
+#### `durationFromIsoTime`
+
+Transforms an ISO 8601 time string into a Duration that can be used with the non-parsing pipes:
+
+```
+{{ '02:04:06.800' | durationFromIsoTime }}
+```
+
 #### `durationFromMilliseconds`
 
 Transforms a duration in milliseconds into a Duration that can be used with the non-parsing pipes:
@@ -267,6 +275,14 @@ Transforms a Duration into an ISO 8601 duration string:
 
 ```
 {{ duration | durationToIso }}
+```
+
+#### `durationToIsoTime`
+
+Transforms a Duration into an ISO 8601 time string:
+
+```
+{{ duration | durationToIsoTime }}
 ```
 
 [angular-datepipe]: https://angular.io/api/common/DatePipe

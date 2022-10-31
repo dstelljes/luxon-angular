@@ -21,12 +21,14 @@ import { DateTimeToRelativeCalendarPipe } from './formatting/date-time-to-relati
 import { DateTimeToSqlPipe } from './formatting/date-time-to-sql.pipe';
 import { DateTimeToUtcPipe } from './zones/date-time-to-utc.pipe';
 import { DurationFromIsoPipe } from './parsing/duration-from-iso.pipe';
+import { DurationFromIsoTimePipe } from './parsing/duration-from-iso-time.pipe';
 import { DurationFromMillisecondsPipe } from './parsing/duration-from-milliseconds.pipe';
 import { DurationLongestPipe } from './math/duration-longest.pipe';
 import { DurationShortestPipe } from './math/duration-shortest.pipe';
 import { DurationToFormatPipe } from './formatting/duration-to-format.pipe';
 import { DurationToHumanPipe } from './formatting/duration-to-human.pipe';
 import { DurationToIsoPipe } from './formatting/duration-to-iso.pipe';
+import { DurationToIsoTimePipe } from './formatting/duration-to-iso-time.pipe';
 
 export {
   DateTimeEarliestPipe,
@@ -50,12 +52,14 @@ export {
   DateTimeToSqlPipe,
   DateTimeToUtcPipe,
   DurationFromIsoPipe,
+  DurationFromIsoTimePipe,
   DurationFromMillisecondsPipe,
   DurationLongestPipe,
   DurationShortestPipe,
   DurationToFormatPipe,
   DurationToHumanPipe,
-  DurationToIsoPipe
+  DurationToIsoPipe,
+  DurationToIsoTimePipe
 };
 
 const PIPES = [
@@ -80,12 +84,14 @@ const PIPES = [
   DateTimeToSqlPipe,
   DateTimeToUtcPipe,
   DurationFromIsoPipe,
+  DurationFromIsoTimePipe,
   DurationFromMillisecondsPipe,
   DurationLongestPipe,
   DurationShortestPipe,
   DurationToFormatPipe,
   DurationToHumanPipe,
-  DurationToIsoPipe
+  DurationToIsoPipe,
+  DurationToIsoTimePipe
 ];
 
 @NgModule({
