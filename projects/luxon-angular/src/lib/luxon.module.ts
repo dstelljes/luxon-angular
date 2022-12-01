@@ -19,6 +19,7 @@ import { DateTimeToLocalPipe } from './zones/date-time-to-local.pipe';
 import { DateTimeToRelativePipe } from './formatting/date-time-to-relative.pipe';
 import { DateTimeToRelativeCalendarPipe } from './formatting/date-time-to-relative-calendar.pipe';
 import { DateTimeToSqlPipe } from './formatting/date-time-to-sql.pipe';
+import { DateTimeToLocaleStringPipe } from './formatting/date-time-to-locale-string.pipe';
 import { DateTimeToUtcPipe } from './zones/date-time-to-utc.pipe';
 import { DurationFromIsoPipe } from './parsing/duration-from-iso.pipe';
 import { DurationFromIsoTimePipe } from './parsing/duration-from-iso-time.pipe';
@@ -50,6 +51,7 @@ export {
   DateTimeToRelativePipe,
   DateTimeToRelativeCalendarPipe,
   DateTimeToSqlPipe,
+  DateTimeToLocaleStringPipe,
   DateTimeToUtcPipe,
   DurationFromIsoPipe,
   DurationFromIsoTimePipe,
@@ -83,6 +85,7 @@ const PIPES = [
   DateTimeToRelativePipe,
   DateTimeToRelativeCalendarPipe,
   DateTimeToSqlPipe,
+  DateTimeToLocaleStringPipe,
   DateTimeToUtcPipe,
   DurationFromIsoPipe,
   DurationFromIsoTimePipe,
