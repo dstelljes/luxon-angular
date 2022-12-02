@@ -7,11 +7,10 @@ import { DateTime, DateTimeFormatOptions, LocaleOptions } from 'luxon';
 export class DateTimeToLocaleStringPipe implements PipeTransform {
   transform<T extends DateTime | null | undefined>(
     value: T,
-    format?: DateTimeFormatOptions,
-    opts?: LocaleOptions
+    format?: DateTimeFormatOptions
   ) {
     return (
-      value == null ? null : value.toLocaleString(format, opts)
+      value == null ? null : value.toLocaleString(format)
     ) as T extends DateTime ? string : null;
   }
 }

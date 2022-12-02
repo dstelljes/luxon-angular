@@ -227,7 +227,7 @@ Transforms a DateTime into an human-readable, internationalized string:
                                   } }}
 ```
 
-The pipe takes [`Intl.DateTimeFormat`][intl-datetimeformat] as the first parameter and Luxon´s [`LocaleOptions`][luxon-localeoptions] as an optional second parameter to override the configuration options on this DateTime.
+The pipe takes [`Intl.DateTimeFormat`][intl-datetimeformat] as a parameter.
 
 #### `dateTimeToIso`
 
@@ -305,7 +305,6 @@ Transforms a Duration into an ISO 8601 time string:
 ```
 
 [intl-datetimeformat]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat
-[luxon-localeoptions]: https://github.com/DefinitelyTyped/DefinitelyTyped/blob/7d923a86551984891ddde154924acb6d29e54808/types/luxon/src/datetime.d.ts#L296
 [angular-datepipe]: https://angular.io/api/common/DatePipe
 [changing-zones]: https://moment.github.io/luxon/docs/manual/zones.html#changing-zones
 [luxon]: https://moment.github.io/luxon/
