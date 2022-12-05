@@ -210,6 +210,25 @@ Transforms a DateTime into an arbitrarily formatted string:
 {{ date | dateTimeToFormat:'MMMM d, yyyy' }}
 ```
 
+#### `dateTimeToLocaleString`
+
+Transforms a DateTime into an human-readable, internationalized string:
+
+```
+{{ date | dateTimeToLocaleString:DateTime.DATETIME_FULL }}
+
+{{ date | dateTimeToLocaleString:{
+                                    year: 'numeric',
+                                    month: 'long',
+                                    day: 'numeric',
+                                    hour: 'numeric',
+                                    minute: '2-digit',
+                                    timeZoneName: 'short'
+                                  } }}
+```
+
+The pipe takes [`Intl.DateTimeFormat`][intl-datetimeformat] as a parameter.
+
 #### `dateTimeToIso`
 
 Transforms a DateTime into an ISO 8601 date:
@@ -285,6 +304,7 @@ Transforms a Duration into an ISO 8601 time string:
 {{ duration | durationToIsoTime }}
 ```
 
+[intl-datetimeformat]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat
 [angular-datepipe]: https://angular.io/api/common/DatePipe
 [changing-zones]: https://moment.github.io/luxon/docs/manual/zones.html#changing-zones
 [luxon]: https://moment.github.io/luxon/
