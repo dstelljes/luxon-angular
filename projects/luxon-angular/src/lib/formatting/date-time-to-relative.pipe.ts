@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, OnDestroy, Pipe, PipeTransform } from '@angular/core';
-import { DateTime, ToRelativeUnit } from 'luxon';
+import { DateTime, ToRelativeOptions, ToRelativeUnit } from 'luxon';
 import { Subscription, interval } from 'rxjs';
 
 @Pipe({
@@ -18,7 +18,7 @@ export class DateTimeToRelativePipe implements OnDestroy, PipeTransform {
     }
   }
 
-  transform <T extends DateTime | null | undefined>(value: T, unit?: ToRelativeUnit, style?: 'long' | 'short' | 'narrow') {
+  transform <T extends DateTime | null | undefined>(value: T, opts?: ToRelativeOptions) {
     if (value == null) {
       if (this.subscription) {
         this.subscription.unsubscribe();
@@ -32,9 +32,6 @@ export class DateTimeToRelativePipe implements OnDestroy, PipeTransform {
       this.subscription = interval(1000).subscribe(() => this.ref.markForCheck());
     }
 
-    return value.toRelative({
-      style,
-      unit
-    });
+    return value.toRelative(opts);
   }
 }

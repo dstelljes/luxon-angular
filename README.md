@@ -258,8 +258,8 @@ Works with Angular’s [`DatePipe`][angular-datepipe]:
 Transforms a DateTime into a relative time:
 
 ```
-{{ date | dateTimeToRelative:'day':'long' }}
-{{ date | dateTimeToRelativeCalendar:'month' }}
+{{ date | dateTimeToRelative:{ unit: 'day', style: 'long' } }}
+{{ date | dateTimeToRelativeCalendar:{ unit: 'month' } }}
 ```
 
 The unit and style parameters are optional.
