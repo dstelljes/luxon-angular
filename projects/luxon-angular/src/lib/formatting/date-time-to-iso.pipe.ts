@@ -1,11 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { DateTime } from 'luxon';
+import { DateTime, ToISOTimeOptions } from 'luxon';
 
 @Pipe({
   name: 'dateTimeToIso'
 })
 export class DateTimeToIsoPipe implements PipeTransform {
-  transform <T extends DateTime | null | undefined>(value: T) {
-    return (value == null ? null : value.toISO()) as T extends DateTime ? string : null;
+  transform <T extends DateTime | null | undefined>(value: T, opts?: ToISOTimeOptions) {
+    return (value == null ? null : value.toISO(opts)) as T extends DateTime ? string : null;
   }
 }
