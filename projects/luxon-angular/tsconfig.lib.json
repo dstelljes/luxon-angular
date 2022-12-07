@@ -10,7 +10,6 @@
     "inlineSources": true,
     "lib": ["dom", "es2018"],
     "outDir": "../../out-tsc/lib",
-    "target": "es2015",
     "types": []
   },
   "exclude": [
