@@ -306,7 +306,7 @@ Transforms a Duration into an ISO 8601 time string:
 
 [intl-datetimeformat]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat
 [angular-datepipe]: https://angular.io/api/common/DatePipe
-[changing-zones]: https://moment.github.io/luxon/docs/manual/zones.html#changing-zones
+[changing-zones]: https://moment.github.io/luxon/#/zones?id=changing-zones
 [luxon]: https://moment.github.io/luxon/
 [relative-time-polyfill]: https://github.com/catamphetamine/relative-time-format
 [relative-time-proposal]: https://github.com/tc39/proposal-intl-relative-time
