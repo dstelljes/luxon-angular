@@ -6,6 +6,6 @@ import { DateTime, ZoneOptions } from 'luxon';
 })
 export class DateTimeToUtcPipe implements PipeTransform {
   transform <T extends DateTime | null | undefined>(value: T, offset?: number, opts?: ZoneOptions) {
-    return (value == null ? null : value.toUTC(offset, opts)) as T extends DateTime ? DateTime : null;
+    return ((value == null ? null : value.toUTC(offset, opts)) as DateTime | null) as T extends DateTime ? DateTime : null;
   }
 }

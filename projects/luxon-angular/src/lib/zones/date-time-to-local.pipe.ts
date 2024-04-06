@@ -6,6 +6,6 @@ import { DateTime } from 'luxon';
 })
 export class DateTimeToLocalPipe implements PipeTransform {
   transform <T extends DateTime | null | undefined>(value: T) {
-    return (value == null ? null : value.toLocal()) as T extends DateTime ? DateTime : null;
+    return ((value == null ? null : value.toLocal()) as DateTime | null) as T extends DateTime ? DateTime : null;
   }
 }
